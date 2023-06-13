@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/* 보더 초기화 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 여백 초기화 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+    font-family: 'NEXONLv1Gothic', AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
+}
+
+/* 링크 초기화 */
+a { 
+    color: #222;
+    text-decoration: none
+}
+
+/* 목록 초기화 */
+ol,
+ul,li {
+    list-style: none
+}
+
+/* 스타일 초기화 */
+strong {
+    font-weight: normal;
+}
+em,
+address {
+    font-style: normal;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+fieldset {
+    border: 0 none;
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 테이블 초기화 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 제목 초기화 */
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
+/* 리스트 스타일 유형 */
+ul.list li,
+ol.list li,
+dl.list li {
+    position: relative;
+    padding-left: 10px;
+}
+ul.list li::before,
+ol.list li::before,
+dl.list li::before {
+    content: '';
+    width: 3px; height: 3px;
+    background: #000;
+    position: absolute;
+    left: 0; top: 7px;
+}
+
+/* iframe 반응형 */
+.iframe {
+    width: 100%;
+    padding-bottom: 56%;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.iframe iframe {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ir 효과 */
+.ir_pm {
+    display: block; 
+    overflow: hidden; 
+    font-size: 0; 
+    line-height: 0; 
+    text-indent: -9999px;
+} 
+.ir_wa {
+    display: block; 
+    overflow: hidden; 
+    position: relative; 
+    z-index: -1; 
+    width: 100%; 
+    height: 100%;
+}
+.ir_so {
+    overflow: hidden; 
+    position: absolute; 
+    width: 0; 
+    height: 0; 
+    line-height: 0; 
+    text-indent: -9999px;
+} 
+
+/* 인풋 스타일 유형 */
+.input_write {
+    width: 100%;
+    display: block;
+    border: 1px solid #dfdfdf;
+    padding: 13px;
+    height: 56px;
+    font-size: 16px;
+    line-height: 22px;
+    box-sizing: border-box;
+}
+.input_write2 {
+    border: 2px solid #a69cf7;
+    padding: 15px 30px;
+    margin: 5px;
+    border-radius: 50px;
+    outline: none;
+    background: #d3cef8;
+    color: #7266c7;
+}
+.input_write2.w100 {
+    min-width: 300px;
+}
+.input_write2::-webkit-input-placeholder {
+    color: #7266c7;
+}
+.input_write2:-ms-input-placeholder {
+    color: #7266c7;
+}
+.input_write2::placeholder {
+    color: #7266c7;
+}
+
+/* 버튼 스타일 유형 */
+.btn_submit {
+    width: 100%;
+    padding: 16px;
+    background-color:#eee;
+    transition: box-shadow .3s, background-color .3s;
+}
+.btn_submit:hover {
+    box-shadow: inset 0 0 0 2px #000;
+    background-color:#fff;
+}
+.btn_submit2 {
+    background: #a69cf7;
+    color: #fff;
+    border-radius: 50px;
+    width: 58px;
+    height: 58px;
+    margin-top: 4px;
+    margin-left: 4px;
+    transition: box-shadow .3s;
+}
+.btn_submit2:hover {
+    box-shadow: inset 0 0 0 5px #9082f5;
+}
+
+/* 간격 */
+.m0  {margin-top: 0;}
+.mt10 {margin-top: 10px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt50 {margin-top: 50px !important;}
+.mt100 {margin-top: 100px !important;}
+
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.mb100 {margin-bottom: 100px !important;}
