@@ -379,8 +379,8 @@
   line-height: 1.6;
 }
 
-.blog__contents .table table tr:nth-child(even)>th,
-.blog__contents .table table tr:nth-child(even)>td {
+.blog__contents .table table tr:nth-child(even) > th,
+.blog__contents .table table tr:nth-child(even) > td {
   background-color: #f5f5f5;
 }
 
@@ -399,18 +399,18 @@
   text-align: center;
 }
 
-.blog__contents .compatibility thead>tr>th img {
+.blog__contents .compatibility thead > tr > th img {
   width: 30px;
   display: block;
   margin: 0 auto;
 }
 
-.blog__contents .compatibility>thead>tr>th {
+.blog__contents .compatibility > thead > tr > th {
   position: relative;
 }
 
-.blog__contents .compatibility>thead>tr>th em,
-.blog__contents .compatibility>thead>tr>th i {
+.blog__contents .compatibility > thead > tr > th em,
+.blog__contents .compatibility > thead > tr > th i {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -481,11 +481,11 @@
   color: #666;
 }
 
-.blog__sample__code .code>div {
+.blog__sample__code .code > div {
   display: none;
 }
 
-.blog__sample__code .code>div.active {
+.blog__sample__code .code > div.active {
   display: block;
 }
 
@@ -677,16 +677,16 @@
   padding: 3px 4px 2px 4px;
   vertical-align: 2px;
   border-radius: 5px;
-  font-family: 'NEXONLv1Gothic';
+  font-family: "NEXONLv1Gothic";
 }
 .blog__contents.tutorial p i {
   position: relative;
   font-style: normal;
 }
 .blog__contents.tutorial p i::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: 0; 
+  left: 0;
   bottom: 0;
   width: 100%;
   height: 5px;
@@ -702,7 +702,6 @@
   text-decoration: underline;
   text-underline-position: under;
 }
-
 
 .blog__contents.tutorial p[data-num]::before {
   content: attr(data-num);
@@ -1208,14 +1207,14 @@ code.hljs {
   border-radius: 2px;
 }
 
-#blog .sample .sampleCode .scMenu>div {
+#blog .sample .sampleCode .scMenu > div {
   display: inline-block;
   border-right: 1px solid #e6e6e6;
   padding: 13px 20px 10px 20px;
   cursor: pointer;
 }
 
-#blog .sample .sampleCode .scCont>div {
+#blog .sample .sampleCode .scCont > div {
   display: none;
 }
 
@@ -1291,6 +1290,34 @@ code.hljs {
   color: #fff;
 }
 
+.refer5 {
+  padding-left: 0 !important;
+}
+
+.refer5 li {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.refer5 li a {
+  margin: 0;
+  padding: 0 17px;
+  border: 1px solid #eee;
+  border-radius: 32px;
+  font-size: 14px;
+  line-height: 30px;
+  vertical-align: middle;
+  color: #555;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.refer5 li a:hover {
+  text-decoration: none;
+  border-color: #fff;
+  background-color: #000;
+  color: #fff;
+}
 
 #footer {
   text-align: center;

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP 패럴랙스 이펙트 🕵️‍♀️</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/webs.css">
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon.png">
+    <link rel="icon" href="assets/ico/favicon.png">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="48x48">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="64x64">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="128x128">
+
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="웹디자인기능사 2023년 버전 튜토리얼입니다.">
+    <meta name="keywords" content="포트폴리오, 웹디자인기능사, 웹디자인기능사 2023, 웹디자인 실기 기출문제, 2023년 웹디기">
+    <meta name="robots" content="all">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이 웹디자인기능사2023" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="assets/ico/favicon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="2023버전 웹디자인기능사 정보를 제공합니다." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이 웹디자인기능사2023" />
+    <meta name="twitter:description" content="2023버전 웹디자인기능사 정보를 제공합니다." />
+    <meta property="twitter:image" content="assets/ico/favicon.png" />
+</head>
+<body>
+
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="header">
+        <div class="header__inner">
+            <div class="left"> 
+                <a href="../index.html" class="star"><span class="ir">메인으로</span></a>
+            </div>
+            <h1>
+                <a href="../index.html">WEBSTORYBOY</a>
+            </h1>
+            <div class="right">
+                <ul>
+                    <li><a href="#">검색</a></li>
+                </ul>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><span>레퍼런스</span></a></li>
+                    <li><a href="#"><span>튜토리얼</span></a></li>
+                    <li><a href="#"><span>게시판</span></a></li>
+                    <li><a href="#"><span>블로그</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="blog">
+            <div class="blog__title">
+                <span class="cate">Tutorial/webd</span>
+                <h1 class="title">GSAP 패럴랙스 이펙트 : 이질감 효과 주기</h1>
+                <div class="meta">
+                    <span class="author">by @webs</span>
+                    <span class="date">2023. 06. 01.</span>
+                </div>
+            </div>
+            <div class="blog__inner container">
+                <div id="youtube" class="blog__contents__intro">
+                    <div class="video nonex resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="desc">
+                        <div class="left">
+                            <span class="num">04</span>
+                            <div class="title">GSAP Parallax Effect : 이질감 효과 주기</div>
+                            <span class="difficulty">난이도 <span>쉬움</span></span>
+                        </div>
+                        <div class="right">
+                            <div class="btn">소스 다운로드</div>
+                            <a href="#" target="_blank" class="sampleBtn">완성 화면X</a>
+                            <a href="#" target="_blank" class="sampleBtn">완성 코드X</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog__contents__intro -->
+
+                <div class="blog__contents tutorial">
+                    <h2>소개</h2>
+                    <p>
+                        안녕하세요! 웹스토리보이입니다. 
+                        패럴랙스 이펙트의 가장 대표적인 효과라고 할 수 있는 이질감 효과를 주겠습니다. 
+                        이질감은 요소가 겹쳤을 때 확인할 수 있습니다. 
+                        스크롤 내리거나 올릴 때마다 위치 이동을 시켜줘서, 
+                        보통의 요소보다 빠르게 또는 느리게 해주는 효과입니다. 
+                        여기에 스무스 효과를 같이 주면 퀄리티 있는 사이트를 만들 수 있습니다. 
+                    </p>      
+                    
+                    <!-- 광고 영역 -->
+                    <!-- //광고 영역 -->
+
+                    <div>
+                        <h3>1. 기본 구조 만들기</h3>
+                        <h4 data-num="01">1-1. 준비하기</h4>
+                        <p>
+                            GSAP를 배우는 시간이기 때문에 HTML/CSS 코딩은 생략하겠습니다.
+                            기본 코딩은 복사해서 사용하겠습니다. 
+                            우선 웹폰트를 설정하고 GSAP에서 필요한 파일을 미리 셋팅해 놓겠습니다. 
+                            GSAP는 자주 업데이트가 되기 때문에 제일 최선 버전을 사용하는게 좋습니다. 
+                        </p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;GSAP Scroll Effect&lt;/title&gt;
+
+    &lt;!-- 웹폰트 설정 --&gt;
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- GSAP 라이브러리 설정 --&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                        <h4 data-num="02">1-2. 기본 셋팅하기</h4>
+                        <p>소스는 그대로 복사해서 사용하겠습니다.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;GSAP Scroll Effect&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+            background-color: #111;
+        }
+        #parallax__title {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+            /* background-color: rgba(255,255,255,0.1); */
+        }
+        .parallax__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255,255,255,0.3); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 15vw;
+        }
+        .parallax__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
+        }
+        .parallax__item__num {
+            font-size: 35vw;
+            position: absolute;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+        .parallax__item:nth-child(even) .parallax__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+        .parallax__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .parallax__item__img {
+            position: absolute;
+            left: -5%; 
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: saturate(0%);
+            transition: all 1s;
+        }
+        .parallax__item__img:hover {
+            filter: saturate(100%);
+            transform: scale(1.025);
+        }
+        #section1 .parallax__item__img {
+            background-image: url(assets/img/images01@2.jpg);
+        }
+        #section2 .parallax__item__img {
+            background-image: url(assets/img/images02@2.jpg);
+        }
+        #section3 .parallax__item__img {
+            background-image: url(assets/img/images03@2.jpg);
+        }
+        #section4 .parallax__item__img {
+            background-image: url(assets/img/images04@2.jpg);
+        }
+        #section5 .parallax__item__img {
+            background-image: url(assets/img/images05@2.jpg);
+        }
+        #section6 .parallax__item__img {
+            background-image: url(assets/img/images06@2.jpg);
+        }
+        #section7 .parallax__item__img {
+            background-image: url(assets/img/images07@2.jpg);
+        }
+        #section8 .parallax__item__img {
+            background-image: url(assets/img/images08@2.jpg);
+        }
+        #section9 .parallax__item__img {
+            background-image: url(assets/img/images09@2.jpg);
+        }
+        .parallax__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
+        }
+        .parallax__item:nth-child(even) .parallax__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="parallax__title"&gt;
+        &lt;h1&gt;GSAP Parallax Effect04&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 이질감 효과&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //parallax__title  --&gt;
+
+    &lt;main id="parallax__cont"&gt;
+        &lt;section id="section1" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+
+        &lt;section id="section2" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+
+        &lt;section id="section3" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+
+        &lt;section id="section4" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+
+        &lt;section id="section5" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+
+        &lt;section id="section6" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+
+        &lt;section id="section7" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+
+        &lt;section id="section8" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+
+        &lt;section id="section9" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/main&gt;
+
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+
+                    <!-- 광고 -->
+                    <!-- //광고 -->
+
+                    <div>
+                        <h3>2. 스크립트 작업하기</h3>
+                        <h4 data-num="03">2-1. 이질감 표현하기</h4>
+                        <p>
+                            대상 <code>parallax__item__desc</code>을 선택 후 애니메션을 주겠습니다. 
+                            <code>yPercent</code>를 주고 <code>ease</code>는 none으로 설정하겠습니다. 
+                            이런 부분은 요소에 맞게 설정해줍니다. 
+                            <code>scrollTrigger</code>를 설정 후
+                            기본적인 요소들을 설정해주면 끝입니다. 
+                        </p>
+<pre><code class="language-js">gsap.to(".parallax__item__desc", {
+    yPercent: -100,
+    ease: "none",
+    duration: 0.5,
+    scrollTrigger: {
+        trigger: ".parallax__item__desc",
+        start: "top bottom", 
+        end: "bottom top",
+        markers: true,
+        scrub: true
+    },  
+});
+</code></pre>
+                        
+                        <h4 data-num="03">2-2. 여러개 이질감 표현하기</h4>
+                        <p>
+                            이번에는 다중 선택을 위한 스크립트를 작성하겠습니다. 
+                            다중 선택을 위해 <code>gsap.utils.toArray</code>를 설정하고, <code>forEach()</code>를 사용합니다. 
+                            스크롤을 위한 기본 값은 다음과 같습니다. 
+                            여기에서 <code>scrub</code>, <code>yPercent</code>, <code>duration</code> 속성 값을 조절하면,
+                            움직임의 퀄리티를 조절할 수 있습니다. 
+                        </p>
+<pre><code class="language-js">gsap.utils.toArray(".parallax__item__desc").forEach(item => {
+    gsap.to(item, {
+        yPercent: -100,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: item,
+            start: "top bottom", 
+            end: "bottom top",
+            markers: true,
+            scrub: 0.5
+        },  
+    });
+});
+</code></pre>
+
+                        
+
+                    <div>
+                        <h3>3. 마무리</h3>
+                        <p>
+                            간단하게 이질감을 표현해봤습니다. 
+                            속도 조절을 통해 움직임을 다르게 해주었습니다. 
+                            여기서 중요한건 하나를 표현할 때와 여러개를 표현할 때 스크립트의 차이점을 이해하는 것이 중요합니다. 
+                            또한 GSAP 애니메이션을 <code>gsap.to</code> 메서드를 사용하는 법과 
+                            이전 예제에서 사용했던 <code>ScrollTrigger.create</code> 사용하는 법을 아는 것도 중요합니다. 
+                            아직 이해가 안가도 다음 예제에서 반복해서 공부해보겠습니다. 
+                            수고하셨습니다. 🥺
+                        </p>
+                    </div>
+                    
+                    <!-- 레퍼런스 -->
+                    <hr>
+                    
+                    <h3>예제 목록</h3>
+                    <ul class="refer5">
+                        <li><a href="#">1. GSAP 패럴랙스 이펙트 : 기본 애니메이션</a></li>
+                        <li><a href="#">2. GSAP 패럴랙스 이펙트 : Pin 애니메이션</a></li>
+                        <li><a href="#">3. GSAP 패럴랙스 이펙트 : Pin 배경 고정하기</a></li>
+                        <li><a href="#">4. GSAP 패럴랙스 이펙트 : 이질감 효과 주기</a></li>
+                    </ul>
+                    
+                </div>
+                <!-- //blog__contents -->
+
+                <aside class="blog__aside">
+                    <button class="blog__aside__btn"><span></span></button>
+                    <div class="blog__aside__chapter">
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <!-- //blog -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/webs.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Scroll Effect</title>
+
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+            background-color: #111;
+        }
+        #parallax__title {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            overflow: hidden;
+        }
+        .parallax__item {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #section2, 
+        #section4, 
+        #section6, 
+        #section8 {
+            background-color: #222;
+        }
+        .parallax__item__num {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 3vw;
+            line-height: 1;
+            z-index: 10;
+        }
+        .parallax__item__img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            background-size: cover;
+            background-position: center;
+        }
+        .parallax__item__img::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1;
+        }
+        #section1 .parallax__item__img {
+            background-image: url(img/images02@2.jpg);
+        }
+        #section2 .parallax__item__img {
+            background-image: url(img/images03@2.jpg);
+        }
+        #section3 .parallax__item__img {
+            background-image: url(img/images04@2.jpg);
+        }
+        #section4 .parallax__item__img {
+            background-image: url(img/images05@2.jpg);
+        }
+        #section5 .parallax__item__img {
+            background-image: url(img/images06@2.jpg);
+        }
+        #section6 .parallax__item__img {
+            background-image: url(img/images07@2.jpg);
+        }
+        #section7 .parallax__item__img {
+            background-image: url(img/images08@2.jpg);
+        }
+        #section8 .parallax__item__img {
+            background-image: url(img/images09@2.jpg);
+        }
+        #section9 .parallax__item__img {
+            background-image: url(img/images10@2.jpg);
+        }
+        .parallax__item__title {
+            font-size: 5vw;
+            z-index: 100;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header id="parallax__title">
+        <h1>GSAP Parallax Effect03</h1>
+        <p>GSAP scrollTrigger - 배경 고정하기</p>
+        <ul>
+            <li><a href="gsap01.html">1</a></li>
+            <li><a href="gsap02.html">2</a></li>
+            <li class="active"><a href="gsap03.html">3</a></li>
+            <li><a href="gsap04.html">4</a></li>
+            <li><a href="gsap05.html">5</a></li>
+            <li><a href="gsap06.html">6</a></li>
+            <li><a href="gsap07.html">7</a></li>
+            <li><a href="gsap08.html">8</a></li>
+            <li><a href="gsap09.html">9</a></li>
+        </ul>
+    </header>
+    <!-- //parallax__title  -->
+
+    <main id="parallax__cont">
+        <section id="section1" class="parallax__item">
+            <span class="parallax__item__num">01</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section1</h2>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2" class="parallax__item">
+            <span class="parallax__item__num">02</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section2</h2>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3" class="parallax__item">
+            <span class="parallax__item__num">03</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section3</h2>
+        </section>
+        <!-- //section3 -->
+
+        <section id="section4" class="parallax__item">
+            <span class="parallax__item__num">04</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section4</h2>
+        </section>
+        <!-- //section4 -->
+
+        <section id="section5" class="parallax__item">
+            <span class="parallax__item__num">05</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section5</h2>
+        </section>
+        <!-- //section5 -->
+
+        <section id="section6" class="parallax__item">
+            <span class="parallax__item__num">06</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section6</h2>
+        </section>
+        <!-- //section6 -->
+
+        <section id="section7" class="parallax__item">
+            <span class="parallax__item__num">07</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section7</h2>
+        </section>
+        <!-- //section7 -->
+
+        <section id="section8" class="parallax__item">
+            <span class="parallax__item__num">08</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section8</h2>
+        </section>
+        <!-- //section8 -->
+
+        <section id="section9" class="parallax__item">
+            <span class="parallax__item__num">09</span>
+            <div class="parallax__item__img"></div>
+            <h2 class="parallax__item__title">section9</h2>
+        </section>
+        <!-- //section9 -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script>
+        // 01 
+        // const panel = document.querySelector("#section3");
+
+        // ScrollTrigger.create({
+        //     trigger: panel,
+        //     start: "top top",
+        //     pin: true,
+        //     pinSpacing: false
+        // });
+
+        //02
+        // gsap.utils.toArray(".parallax__item").forEach((panel, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: panel,
+        //         start: "top top",
+        //         pin: true, 
+        //         pinSpacing: false 
+        //     });
+        // });
+
+        //03 
+        let panels = gsap.utils.toArray(".parallax__item");
+        let tops = panels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
+        
+        panels.forEach((panel, i) => {
+            ScrollTrigger.create({
+                trigger: panel,
+                start: () => panel.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+                pin: true, 
+                pinSpacing: false 
+            });
+        });
+
+        ScrollTrigger.create({
+            snap: {
+                snapTo: (progress, self) => {
+                    let panelStarts = tops.map(st => st.start), 
+                    snapScroll = gsap.utils.snap(panelStarts, self.scroll()); 
+                    return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); 
+                },
+                duration: 0.5
+            }
+        });
+    </script>
+
+</body>
+</html>

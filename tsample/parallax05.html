@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP 패럴랙스 이펙트 🕵️‍♀️</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/webs.css">
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon.png">
+    <link rel="icon" href="assets/ico/favicon.png">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="48x48">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="64x64">
+    <link rel="icon" href="assets/ico/favicon.png" sizes="128x128">
+
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="웹디자인기능사 2023년 버전 튜토리얼입니다.">
+    <meta name="keywords" content="포트폴리오, 웹디자인기능사, 웹디자인기능사 2023, 웹디자인 실기 기출문제, 2023년 웹디기">
+    <meta name="robots" content="all">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이 웹디자인기능사2023" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="assets/ico/favicon.png" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="2023버전 웹디자인기능사 정보를 제공합니다." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이 웹디자인기능사2023" />
+    <meta name="twitter:description" content="2023버전 웹디자인기능사 정보를 제공합니다." />
+    <meta property="twitter:image" content="assets/ico/favicon.png" />
+</head>
+<body>
+
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="header">
+        <div class="header__inner">
+            <div class="left"> 
+                <a href="../index.html" class="star"><span class="ir">메인으로</span></a>
+            </div>
+            <h1>
+                <a href="../index.html">WEBSTORYBOY</a>
+            </h1>
+            <div class="right">
+                <ul>
+                    <li><a href="#">검색</a></li>
+                </ul>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><span>레퍼런스</span></a></li>
+                    <li><a href="#"><span>튜토리얼</span></a></li>
+                    <li><a href="#"><span>게시판</span></a></li>
+                    <li><a href="#"><span>블로그</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="blog">
+            <div class="blog__title">
+                <span class="cate">Tutorial/webd</span>
+                <h1 class="title">GSAP 패럴랙스 이펙트 : 나타나기 효과</h1>
+                <div class="meta">
+                    <span class="author">by @webs</span>
+                    <span class="date">2023. 06. 01.</span>
+                </div>
+            </div>
+            <div class="blog__inner container">
+                <div id="youtube" class="blog__contents__intro">
+                    <div class="video nonex resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="desc">
+                        <div class="left">
+                            <span class="num">05</span>
+                            <div class="title">GSAP Parallax Effect : 나타나기 효과</div>
+                            <span class="difficulty">난이도 <span>쉬움</span></span>
+                        </div>
+                        <div class="right">
+                            <div class="btn">소스 다운로드</div>
+                            <a href="#" target="_blank" class="sampleBtn">완성 화면X</a>
+                            <a href="#" target="_blank" class="sampleBtn">완성 코드X</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog__contents__intro -->
+
+                <div class="blog__contents tutorial">
+                    <h2>소개</h2>
+                    <p>
+                        안녕하세요! 웹스토리보이입니다. 
+                        이번에는 스크롤을 내리면 하나씩 나타나는 효과를 만들어 보겠습니다. 
+                        나타나기 효과는 이미지에 줄 수도 있고, 텍스트에 줄 수도 있습니다. 
+                        해당 요소에 이름에 각각 스크립트를 설정하면 조금 번거롭기 때문에 클래스 이름으로 설정할 수도 있습니다. 
+                        내가 원하는 효과의 이름을 작성하면, 그거에 맞추어 스크립트를 작성하면 됩니다. 
+                        기존과는 약간 다를 수 있지만 기본 원리는 동일하기 때문에 어렵지는 않습니다. 
+                        그럼 시작해 볼까요? 😇
+                    </p>      
+                    
+                    <!-- 광고 영역 -->
+                    <!-- //광고 영역 -->
+
+                    <div>
+                        <h3>1. 기본 구조 만들기</h3>
+                        <h4 data-num="01">1-1. 준비하기</h4>
+                        <p>
+                            GSAP를 배우는 시간이기 때문에 HTML/CSS 코딩은 생략하겠습니다.
+                            기본 코딩은 복사해서 사용하겠습니다. 
+                            우선 웹폰트를 설정하고 GSAP에서 필요한 파일을 미리 셋팅해 놓겠습니다. 
+                            GSAP는 자주 업데이트가 되기 때문에 제일 최선 버전을 사용하는게 좋습니다. 
+                        </p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;GSAP Scroll Effect&lt;/title&gt;
+
+    &lt;!-- 웹폰트 설정 --&gt;
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- GSAP 라이브러리 설정 --&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                        <h4 data-num="02">1-2. 기본 셋팅하기</h4>
+                        <p>소스는 그대로 복사해서 사용하겠습니다.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;GSAP Scroll Effect&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+            background-color: #111;
+        }
+        #parallax__title {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+            /* background-color: rgba(255,255,255,0.1); */
+        }
+        .parallax__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255,255,255,0.3); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 15vw;
+        }
+        .parallax__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
+        }
+        .parallax__item__num {
+            font-size: 35vw;
+            position: absolute;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+        .parallax__item:nth-child(even) .parallax__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+        .parallax__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .parallax__item__img {
+            position: absolute;
+            left: -5%; 
+            top: -5%;
+            width: 110%;
+            height: 110%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            filter: saturate(0%);
+            transition: all 1s;
+        }
+        .parallax__item__img:hover {
+            filter: saturate(100%);
+            transform: scale(1.025);
+        }
+        #section1 .parallax__item__img {
+            background-image: url(assets/img/images01@2.jpg);
+        }
+        #section2 .parallax__item__img {
+            background-image: url(assets/img/images02@2.jpg);
+        }
+        #section3 .parallax__item__img {
+            background-image: url(assets/img/images03@2.jpg);
+        }
+        #section4 .parallax__item__img {
+            background-image: url(assets/img/images04@2.jpg);
+        }
+        #section5 .parallax__item__img {
+            background-image: url(assets/img/images05@2.jpg);
+        }
+        #section6 .parallax__item__img {
+            background-image: url(assets/img/images06@2.jpg);
+        }
+        #section7 .parallax__item__img {
+            background-image: url(assets/img/images07@2.jpg);
+        }
+        #section8 .parallax__item__img {
+            background-image: url(assets/img/images08@2.jpg);
+        }
+        #section9 .parallax__item__img {
+            background-image: url(assets/img/images09@2.jpg);
+        }
+        .parallax__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
+        }
+        .parallax__item:nth-child(even) .parallax__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="parallax__title"&gt;
+        &lt;h1&gt;GSAP Parallax Effect05&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 나타나기 효과&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //parallax__title  --&gt;
+
+    &lt;main id="parallax__cont"&gt;
+        &lt;section id="section1" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+
+        &lt;section id="section2" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+
+        &lt;section id="section3" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+
+        &lt;section id="section4" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+
+        &lt;section id="section5" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+
+        &lt;section id="section6" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+
+        &lt;section id="section7" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+
+        &lt;section id="section8" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+
+        &lt;section id="section9" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/main&gt;
+
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+
+                    <!-- 광고 -->
+                    <!-- //광고 -->
+
+                    <div>
+                        <h3>2. 스크립트 작업하기</h3>
+                        <h4 data-num="03">2-1. 나타나기 표현하기</h4>
+                        <p>
+                            이번에는 <code>ScrollTrigger.create</code>를 사용하겠습니다. 
+                            다중 선택이기 때문에 <code>gsap.utils.toArray</code>와 <code>forEach</code>를 사용하겠습니다. 
+                            시작점과 끝나는 점을 설정하고 애니메이션을 추가하겠습니다. 
+                            애니메이션을 추가하기 위해 콜백함수를 사용할 것입니다. 
+                            <code>onEnter</code> 콜백함수를 이용하여 <code>animate</code> 함수를 만들겠습니다. 
+                            GSAP의 <code>fromTo</code> 메서드를 이용해서 요소의 애니메이션 전과 후를 설정하겠습니다. 
+                            GSAP에서 투명도는 <code>autoAlpha</code>를 사용합니다. 
+                            해당 부분에 오면 투명도가 작동하기 때문에 미리 투명도를 0으로 만들어야 합니다. 
+                            그래서 <code>item.style.opacity = "0";</code>를 설정했습니다. 
+                            이렇게 하면 자연스럽게 나타나기가 연출됩니다. 
+                            여기에 <code>overwrite: "auto"</code> 속성을 추가하여, 
+                            애니메이션이 한번만 작동하도록 할 것입니다. 
+                            어떤 요소에 오버 효과 애니메이션을 넣었다면 오버 했을 때 오버 효과는 짧게 한번 또는 여러번이 발생할 수 있습니다. 
+                            그럼 오버 효과 명령어는 데이터에 저장이 되는데 여러개가 저장되어 애니메이션이 계속 반복적으로 일어날 수 있습니다. 
+                            그 부분을 컨트롤 해주는 것이 <code>overwrite</code> 입니다. 
+                            간단하게 생각하면 애니메이션을 한번만 작동할 수 있도록 설정하는 것입니다. 
+                        </p>
+<pre><code class="language-js">gsap.utils.toArray(".parallax__item__desc").forEach((item) =&gt; {
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: true,
+        onEnter: () =&gt; {animate(item)}, 
+    });
+
+    item.style.opacity = "0";
+});
+
+const animate = (item) =&gt; {
+    gsap.fromTo(item, 
+        {autoAlpha: 0, x: 100, y: 0}, 
+        {autoAlpha: 1, x: 0, y: 0, duration: 1.25, overwrite: "auto", ease: "expo"}
+    );
+}
+</code></pre>
+                        
+                        <h4 data-num="04">2-2. 클래스 이름으로 설정하기</h4>
+                        <p>
+                            각 섹션의 텍스트 영역에 클래스 <code>reveal</code>을 설정했습니다.
+                        </p>
+<pre><code class="language-html">&lt;p class="parallax__item__desc reveal"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+</code></pre>
+                        <p>
+                            선택 요소도 <code>reveal</code>로 변경했습니다.
+                            이렇게 설정해도 애니메이션은 변함이 없이 똑같이 나옵니다. 
+                        </p>
+<pre><code class="language-js">gsap.utils.toArray(".reveal").forEach(item => {
+    gsap.to(item, {
+        yPercent: -100,
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: item,
+            start: "top bottom", 
+            end: "bottom top",
+            markers: true,
+            scrub: 0.5
+        },  
+    });
+});
+</code></pre>
+                        
+                        <h4 data-num="05">2-3. 애니메이션 위치 설정하기</h4>
+                        <p>
+                            애니메이션이 오른쪽에서 왼쪽으로만 나오면 이상하니,
+                            짝수 섹션은 왼쪽에 오른쪽으로 나오게 설정할 것입니다. 
+                            <code>reveal</code> 클래스 옆에 <code>reveal_LTR</code>을 설정합니다.
+                        </p>
+<pre><code class="language-html">&lt;p class="parallax__item__desc reveal"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+</code></pre>
+                        <p>
+                            변수 <code>x</code>와 <code>y</code>를 설정하고, 
+                            클래스에 <code>reveal_LTR</code>가 있는지 체크 후 위치 값을 설정합니다. 
+                            애니메이션 처음의 위치를 변수 값으로 대처하면 상황에 따라 애니메이션을 다르게 설정할 수 있습니다.
+                        </p>
+<pre><code class="language-js">const animate = (item) => {
+    let x = 100;
+    let y = 0;
+
+    if(item.classList.contains("reveal_LTR")){
+        x = -100;
+        y = 0;
+    }
+
+    gsap.fromTo(item, 
+        {autoAlpha: 0, x: x, y: y}, 
+        {autoAlpha: 1, x: 0, y: 0, duration: 1.25, overwrite: "auto", ease: "expo"}
+    );
+}
+</code></pre>
+
+                        <h4 data-num="06">2-4. 애니메이션 추가 설정하기</h4>
+                        <p>
+                            위에서 아래로, 아래에서 위로 애니메이션도 추가 설정하겠습니다. 
+                            이렇게 한번 만들어 놓으면, 포폴에서 편하게 사용할 수 있습니다. 
+                            이름은 <code>reveal_BTT</code>와 <code>reveal_TTB</code>로 설정하겠습니다. 
+                        </p>
+<pre><code class="language-html">&lt;p class="parallax__item__desc reveal"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_BTT"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_TTB"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_BTT"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_LTR"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+&lt;p class="parallax__item__desc reveal reveal_TTB"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
+</code></pre>
+                        <p>
+                            변수 기본 값을 <code>0</code>으로 설정하고,
+                            <code>else if</code>문을 사용하여, 해당 변수 값을 개별적으로 설정하겠습니다. 
+                            아무것도 해당되지 않으면 기본 값이기 때문에 x=100, y=0으로 설정할 것입니다. 
+                            이렇게 하면 원하는 요소에 애니메이션을 자유롭게 설정할 수 있습니다. 
+                        </p>
+<pre><code class="language-js">const animate = (item) => {
+    let x = 0;
+    let y = 0;
+
+    if(item.classList.contains("reveal_LTR")){
+        x = -100;
+        y = 0;
+    } else if(item.classList.contains("reveal_BTT")){
+        x = 0;
+        y = 100;
+    } else if(item.classList.contains("reveal_TTB")){
+        x = 0;
+        y = -100;
+    } else {
+        x = 100;
+        y = 0;
+    }
+
+    gsap.fromTo(item, 
+        {autoAlpha: 0, x: x, y: y}, 
+        {autoAlpha: 1, x: 0, y: 0, duration: 1.25, overwrite: "auto", ease: "expo"}
+    );
+}
+</code></pre>
+    
+
+                        <h4 data-num="07">2-5. 정리하기</h4>
+                        <p>
+                            투명도 설정을 GSPA 스타일에 맞게 따로 정리를 했습니다. 
+                            시작값과 끝나는 값을 주석표시를 하여 기본 값으로 설정하겠습니다. 
+                            그럼 섹션이 시작하면 바로 작동하게 됩니다. 
+                            이렇게 스크립트를 작성하고 원하는 곳에 
+                            <code>reveal</code>, <code>reveal_LTR</code>, <code>reveal_BTT</code>, <code>reveal_TTB</code>, <code>data-delay="1"</code>
+                            을 작성하면 리빌 효과를 자유롭게 줄 수 있습니다. 
+                        </p>
+<pre><code class="language-js">const hide = (item) => {
+    gsap.set(item, {autoAlpha: 0});
+}
+
+const animate = (item) => {
+    let x = 0;
+    let y = 0;
+    let delay = item.dataset.delay;
+
+    if(item.classList.contains("reveal_LTR")){
+        x = -100;
+        y = 0;
+    } else if(item.classList.contains("reveal_BTT")){
+        x = 0;
+        y = 100;
+    } else if(item.classList.contains("reveal_TTB")){
+        x = 0;
+        y = -100;
+    } else {
+        x = 100;
+        y = 0;
+    }
+
+    gsap.fromTo(item, 
+        {autoAlpha: 0, x: x, y: y}, 
+        {autoAlpha: 1, x: 0, y: 0, delay: delay, duration: 1.25, overwrite: "auto", ease: "expo"}
+    );
+}
+
+gsap.utils.toArray(".reveal").forEach((item) => {
+    hide(item);
+
+    ScrollTrigger.create({
+        trigger: item,
+        // start: "top 80%",
+        // end: "bottom 20%",
+        markers: true,
+        onEnter: () => {animate(item)}, 
+    });
+});
+</code></pre>
+                    <div>
+
+
+                        <h3>3. 마무리</h3>
+                        <p>
+                            어떤가요? 잘 되시나요?
+                            GSAP를 이용하여 나타나기 효과를 쉽게 작성할 수 있습니다. 
+                            이렇게 한번만 만들어 놓으면 자유롭게 사용이 가능하고, 
+                            내가 원하는 기능이나 추가 옵션을 설정할 수 있습니다. 
+                            자기가 직접 스크립트를 짜고, 이해해야 수정이 가능합니다. 
+                            최대한 이해하려고 노력하고, 이해가 안되면 외우시면 됩니다. 
+                            외우다 보면 이해가 되고, 이해가 되다보면 외워집니다. 
+                            결국 반복적으로 연습하시면 됩니다. ^^
+                            수고하셨습니다. 🥰😍
+                        </p>
+                    </div>
+                    
+                    <!-- 레퍼런스 -->
+                    <hr>
+                    
+                    <h3>예제 목록</h3>
+                    <ul class="refer5">
+                        <li><a href="#">1. GSAP 패럴랙스 이펙트 : 기본 애니메이션</a></li>
+                        <li><a href="#">2. GSAP 패럴랙스 이펙트 : Pin 애니메이션</a></li>
+                        <li><a href="#">3. GSAP 패럴랙스 이펙트 : Pin 배경 고정하기</a></li>
+                        <li><a href="#">4. GSAP 패럴랙스 이펙트 : 이질감 효과</a></li>
+                        <li><a href="#">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
+                    </ul>
+                    
+                </div>
+                <!-- //blog__contents -->
+
+                <aside class="blog__aside">
+                    <button class="blog__aside__btn"><span></span></button>
+                    <div class="blog__aside__chapter">
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <!-- //blog -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/webs.js"></script>
+</body>
+</html>
+
