@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Tutorial/webd</span>
-                <h1 class="title">GSAP 패럴랙스 이펙트 : 배경색 효과</h1>
+                <h1 class="title">GSAP 패럴랙스 이펙트 : 가로/세로 효과</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2023. 06. 01.</span>
@@ -86,14 +86,14 @@
                     </div>
                     <div class="desc">
                         <div class="left">
-                            <span class="num">07</span>
-                            <div class="title">GSAP Parallax Effect : 배경색 효과</div>
+                            <span class="num">13</span>
+                            <div class="title">GSAP Parallax Effect : 가로/세로 효과</div>
                             <span class="difficulty">난이도 <span>중간</span></span>
                         </div>
                         <div class="right">
                             <div class="btn">소스 다운로드</div>
-                            <a href="https://webstoryboy.github.io/gsap2023/gsap07.html" target="_blank" class="sampleBtn">완성 화면</a>
-                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap07.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://webstoryboy.github.io/gsap2023/gsap13.html" target="_blank" class="sampleBtn">완성 화면</a>
+                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap13.html" target="_blank" class="sampleBtn">소스 보기</a>
                         </div>
                     </div>
                 </div>
@@ -103,12 +103,11 @@
                     <h2>소개</h2>
                     <p>
                         안녕하세요! 웹스토리보이입니다. 
-                        이번시간에는 배경색을 자연스럽게 변경하는 애니메이션을 만들어보겠습니다. 
-                        방법은 두가지로 설정할 수 있습니다. 
-                        자연스럽게 전체 배경에 색을 넣는 과정과, 해당 섹션의 <code>data</code>값을 이용해
-                        섹션마다 변경하는 방법입니다. 
-                        어떤 방법이든 자연스럽게 배경색을 변경할 수 있습니다. 
-                        그럼 시작해볼까요? 😘
+                        가로 효과를 무사히 작업하였다면, 이제는 가로 세로 효과를 작업해보겠습니다. 
+                        가로와 세로가 결합된 형태이기 때문에 가로 효과보다는 조금 더 어려울 수 있습니다. 
+                        처음부터 가로 효과가 아닌 원하는 섹션만 가로 효과로 만들어야 하기 때문에 
+                        그 부분만 가로로 CSS 셋팅이 먼저 되어 있어야 합니다. 
+                        그럼 한번 만들어볼까요? 🙀
                     </p>      
                     
                     <!-- 광고 영역 -->
@@ -133,6 +132,7 @@
 
     &lt;!-- 웹폰트 설정 --&gt;
     &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
@@ -166,11 +166,10 @@
             text-decoration: none;
         }
         body {
-            --bg-color : #222;
-            background-color: var(--bg-color);
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background-color: #333;
         }
         #parallax__title {
             position: fixed;
@@ -211,30 +210,29 @@
         }
 
         /* parallax__cont */
-        #parallax__cont {
-            width: 100%;
-        }
         .parallax__item {
             width: 100%;
             height: 100vh;
-            display: flex;
-            align-items: center;    
-            justify-content: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .parallax__item__num {
+            font-size: 5vw;
             position: absolute;
             right: 20px;
             bottom: 20px;
-            font-size: 1vw;
+            font-family: "Lato";
+            font-weight: 100;
+            z-index: 100;
         }
         .parallax__item__imgWrap {
-            width: 50%;
-            margin-right: 30%;
-            padding-bottom: 26.25%;
-            background: #000;
+            width: 30%;
+            padding-bottom: 18%;
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
         .parallax__item__img {
             position: absolute;
@@ -252,52 +250,44 @@
             filter: saturate(100%);
             transform: scale(1.025);
         }
-        .parallax__item__desc {
-            font-size: 3vw;
-            line-height: 1.4;
-            margin-top: 10vw;
-            margin-left: -4vw;
-            margin-right: 2vw;
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            word-break: keep-all;
-        }
-
         #section1 .parallax__item__img {
-            background-image: url(assets/img/images01@2.jpg);
+            background-image: url(img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(assets/img/images02@2.jpg);
+            background-image: url(img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(assets/img/images03@2.jpg);
+            background-image: url(img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(assets/img/images04@2.jpg);
+            background-image: url(img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(assets/img/images05@2.jpg);
+            background-image: url(img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(assets/img/images06@2.jpg);
+            background-image: url(img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(assets/img/images07@2.jpg);
+            background-image: url(img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(assets/img/images08@2.jpg);
+            background-image: url(img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(assets/img/images09@2.jpg);
+            background-image: url(img/images09@2.jpg);
         }
+        #section1, #section3, #section5, #section7, #section9 {
+            background-color: #111;
+        }
+
+        /* option */
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header id="parallax__title"&gt;
-        &lt;h1&gt;GSAP Parallax Effect07&lt;/h1&gt;
-        &lt;p&gt;GSAP scrollTrigger - 배경색 효과&lt;/p&gt;
+        &lt;h1&gt;GSAP Parallax Effect13&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 가로/세로 효과&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
@@ -305,92 +295,89 @@
             &lt;li&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap10.html"&gt;10&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap11.html"&gt;11&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap12.html"&gt;12&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="gsap13.html"&gt;13&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //parallax__title  --&gt;
 
     &lt;main id="parallax__cont"&gt;
-        &lt;section id="section1" class="parallax__item" data-bgcolor="#111111"&gt;
+        &lt;section id="section1" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;01&lt;/span&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
 
-        &lt;section id="section2" class="parallax__item" data-bgcolor="#593b22"&gt;
+        &lt;section id="section2" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;02&lt;/span&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
 
-        &lt;section id="section3" class="parallax__item" data-bgcolor="#245922"&gt;
-            &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
-            &lt;figure class="parallax__item__imgWrap"&gt;
-                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section3 --&gt;
+        &lt;main id="horizontal"&gt;
+            &lt;section id="section3" class="parallax__item"&gt;
+                &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
+                &lt;figure class="parallax__item__imgWrap"&gt;
+                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            &lt;!-- //section3 --&gt;
 
-        &lt;section id="section4" class="parallax__item" data-bgcolor="#243859"&gt;
-            &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
-            &lt;figure class="parallax__item__imgWrap"&gt;
-                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section4 --&gt;
+            &lt;section id="section4" class="parallax__item"&gt;
+                &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
+                &lt;figure class="parallax__item__imgWrap"&gt;
+                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            &lt;!-- //section4 --&gt;
 
-        &lt;section id="section5" class="parallax__item" data-bgcolor="#3f2459"&gt;
-            &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
-            &lt;figure class="parallax__item__imgWrap"&gt;
-                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section5 --&gt;
+            &lt;section id="section5" class="parallax__item"&gt;
+                &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
+                &lt;figure class="parallax__item__imgWrap"&gt;
+                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            &lt;!-- //section5 --&gt;
 
-        &lt;section id="section6" class="parallax__item" data-bgcolor="#59243c"&gt;
-            &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
-            &lt;figure class="parallax__item__imgWrap"&gt;
-                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section6 --&gt;
+            &lt;section id="section6" class="parallax__item"&gt;
+                &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
+                &lt;figure class="parallax__item__imgWrap"&gt;
+                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            &lt;!-- //section6 --&gt;
 
-        &lt;section id="section7" class="parallax__item" data-bgcolor="#3f2459"&gt;
-            &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
-            &lt;figure class="parallax__item__imgWrap"&gt;
-                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section7 --&gt;
+            &lt;section id="section7" class="parallax__item"&gt;
+                &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
+                &lt;figure class="parallax__item__imgWrap"&gt;
+                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+            &lt;/section&gt;
+            &lt;!-- //section7 --&gt;
+        &lt;/main&gt;
 
-        &lt;section id="section8" class="parallax__item" data-bgcolor="#222222"&gt;
+        &lt;section id="section8" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
 
-        &lt;section id="section9" class="parallax__item" data-bgcolor="#592624"&gt;
+        &lt;section id="section9" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;09&lt;/span&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="parallax__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/main&gt;
@@ -399,6 +386,7 @@
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
+
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -409,77 +397,93 @@
 
                     <div>
                         <h3>2. 스크립트 작업하기</h3>
-                        <h4 data-num="03">2-1. 전체 배경 변경하기 </h4>
+                        <h4 data-num="03">2-1. 작업하기</h4>
                         <p>
-                            전체 배경에 색을 변경하기 위해서 CSS 변수를 사용하였습니다. 
-                            <code>body</code> 태그에 배경색을 변수에 값을 넣었습니다. 
-                            CSS에서 변수를 설정하는 것은 <code>--</code>로 표현하고 
-                            불러올 때에는 <code>var()</code> 이렇게 사용합니다. 
-                            gsap timeline을 사용하여 배경색을 변경하겠습니다. 
-                            <code>scrollTrigger</code>의 시작값과 끝나는 값을 설정합니다. 
-                            끝나는 값에는 <code>max</code> 속성 값을 설정할 수 있습니다. 
-                            이렇게 하고 원하는 배경색을 <code>to()</code> 메서드에 설정하면 배경색은 자연스럽게 변경됩니다. 
+                            먼저 CSS 셋팅을 해야 합니다. 
+                            원하는 가로 영역을 <code>#horizontal</code>로 감싸고 다음과 같이 셋팅을 합니다. 
+                            5개의 섹션을 작업할 것이기 때문에 <code>500vw</code>로 설정햇습니다. 
                         </p>
-<pre><code class="language-css">body {
-    --bg-color : #222;
-    background-color: var(--bg-color);
+<pre><code class="language-css">#parallax__cont {
+    overflow: hidden;
+}
+#horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500vw;
+}
+#horizontal &gt; section {
+    width: 100vw;
 }</code></pre>
-<pre><code class="language-js">let bg = gsap.timeline({
-    scrollTrigger: {
-        start: 0,
-        end: "max",
-        scrub: true
-    }
-});
-
-bg.to("body", {"--bg-color": "red"})
-   .to("body", {"--bg-color": "green"})
-   .to("body", {"--bg-color": "blue"});
-</code></pre>
-                        
-                        <h4 data-num="04">2-2. data 값으로 변경하기</h4>
                         <p>
-                            이번에는 섹션별로 배경색을 변경해보겠습니다. 
-                            섹션별로 <code>data-bgcolor</code>을 설정하여, 값을 불러와 변경하겠습니다. 
-                            꼭 섹션별로 색이 있을 필요는 없습니다. 
-                            다중 선택이기 때문에 <code>gsap.utils.toArray</code>와 <code>forEach()</code>를 사용했습니다. 
-                            이번에는 <code>ScrollTrigger.create</code>를 생성하여 트리거와 시작값, 끝나는 값을 설정합니다. 
-                            콜백 함수를 사용하여 <code>onEnter</code>와 <code>onEnterBack</code>를 설정하면 
-                            배경색은 자연스럽게 변경됩니다. 
-                            배경색 속도 조절은 <code>duration</code>으로 설정하면 됩니다. 
+                            먼저, const horizontal = document.querySelector("#horizontal");은 #horizontal ID를 가진 요소를 선택하여 horizontal 변수에 저장합니다. 
+                            이 요소는 스크롤 트리거로 사용될 것입니다.
+
+                            다음으로, gsap.utils.toArray("#horizontal > section")은 #horizontal 요소 내부에 있는 모든 section 요소를 선택하여 배열로 반환하는 코드입니다. 
+                            선택된 요소들은 <code>section</code> 변수에 저장됩니다.
                         </p>
-<pre><code class="language-js">gsap.utils.toArray(".parallax__item").forEach((item) => {
-    let color = item.getAttribute("data-bgcolor");
+                        <p>
+                            <code>gsap.to()</code> 메서드를 사용하여 선택한 section 요소들에 대한 애니메이션을 정의합니다.
+                            <i>xPercent: -100 * (section.length - 1)</i>은 section 배열 내의 요소들을 가로 축으로 이동시키는 애니메이션 속성입니다. 
+                            -100 * (section.length - 1)은 마지막 요소를 제외한 모든 요소들을 왼쪽으로 100%만큼 이동시킵니다.
+                            <code>ease: "none"</code>은 애니메이션의 움직임을 부드럽게 하는 이징 효과를 적용하지 않는 것을 의미합니다.
+                        </p>
+                        <p>
+                            scrollTrigger 객체는 스크롤 이벤트와 관련된 설정을 정의하며, 
+                            <code>trigger: horizontal</code>은 스크롤 트리거로 사용될 요소를 지정합니다. 
+                            위에서 선택한 horizontal 요소를 지정했습니다.
 
-    ScrollTrigger.create({
-        trigger: item,
-        start: "top 50%",
-        end: "bottom 5%",
-        markers: true,
+                            <code>start: "top top"</code>은 트리거 요소가 스크롤되기 시작하는 시점을 지정합니다. 
+                            여기서는 스크롤이 맨 위로 이동했을 때를 의미합니다.
+                        </p>
+                        <p>
+                            <i>end: () => "+=" + (horizontal.offsetWidth - innerWidth)</i>는 애니메이션이 끝나는 시점을 지정하는 옵션입니다. 
+                            horizontal.offsetWidth - innerWidth는 horizontal 요소의 너비에서 현재 뷰포트의 너비를 뺀 값으로, 애니메이션이 끝나는 지점을 설정합니다.
 
-        onEnter: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
-        onEnterBack: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
-    });
-});
-</code></pre>
+                            pin: true는 스크롤 트리거 요소를 고정시키는 옵션입니다. 
+                            즉, 트리거 요소가 스크롤되면서 다른 요소들이 지나가는 것처럼 보이게 됩니다.
+                        </p>
+                        <p>
+                            <code>scrub: 1</code>은 트리거 요소가 스크롤되는 동안 애니메이션을 부드럽게 진행하기 위한 옵션입니다.
+                            <code>snapTo: 1 / (section.length - 1)</code>은 스크롤 위치를 요소들의 위치에 스냅하는 옵션입니다. 
+                            1 / (section.length - 1)은 각 요소 사이의 스냅 간격을 설정합니다.
+                            <code>inertia: false</code>는 스냅 시의 관성 효과를 비활성화합니다.
+                            <code>duration: {min: 0.1, max: 0.1}</code>은 스냅 애니메이션의 최소 및 최대 지속 시간을 설정합니다.
+                            <code>invalidateOnRefresh: true</code>는 페이지 새로고침 시 스크롤 트리거 위치를 재계산하도록 설정합니다.
+                            <code>anticipatePin: 1</code>은 스크롤 트리거 요소의 위치를 예측하여 부드럽게 고정하는 옵션입니다.
+                        </p>
+<pre><code class="language-js">const horizontal = document.querySelector("#horizontal");
+const section = gsap.utils.toArray("#horizontal > section");
+
+gsap.to(section, {
+    xPercent: -100 * (section.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: horizontal,
+        start: "top top",
+        end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
+        pin: true,
+        scrub: 1,
+        snap: {
+            snapTo: 1 / (section.length - 1),
+            inertia: false,
+            duration: {min: 0.1, max: 0.1}
+        },
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+    }
+});</code></pre>
                         
                         
                     </div>
                     <div>
                         <h3>3. 마무리</h3>
                         <p>
-                            이번에는 비교적 간단하게 끝났습니다. 
-                            자바스크립트로 작업하면 복잡하고 자연스럽지 않은데,
-                            GSAP를 이용하면 자연스럽게 변경할 수 있습니다. 
-                            포트포리오 만들때 많이 활용하면 좋겠네요! 
-                            이상한 점이나 버그 있으면 언제나 댓글 부탁드립니다. 
-                            감사합니다. 수고하셨습니다. 🥲
+                            조금 어려운 부분들이 나오기는 했지만, 이렇게 하면 세로 / 가로 모드가 완성됩니다. 
+                            최대한 간단하게 스크립트를 구성하였고, 포폴 만드는데 크게 어려움이 없을거라고 생각이 듭니다. 
+                            지금가지 가로 모드, 세로가로 모드를 완성하였습니다. 
+                            그럼 이렇게 만든 모드에서 애니메이션까지 나타나게 하면 완벽하겠죠^^ 
+                            지금까지 배웠던 것을 접목시키면 훌륭한 패럴랙스 사이트가 완성될 겁니다. 
+                            수고하셨습니다. 🥱
                         </p>
                     </div>
                     
@@ -495,8 +499,13 @@ bg.to("body", {"--bg-color": "red"})
                         <li><a href="#">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
                         <li><a href="#">6. GSAP 패럴랙스 이펙트 : 텍스트 효과</a></li>
                         <li><a href="#">7. GSAP 패럴랙스 이펙트 : 배경색 효과</a></li>
+                        <li><a href="#">8. GSAP 패럴랙스 이펙트 : 진행바 효과</a></li>
+                        <li><a href="#">9. GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</a></li>
+                        <li><a href="#">10. GSAP 패럴랙스 이펙트 : 메뉴 축소 효과</a></li>
+                        <li><a href="#">11. GSAP 패럴랙스 이펙트 : 메뉴 숨기기 효과</a></li>
+                        <li><a href="#">12. GSAP 패럴랙스 이펙트 : 가로 효과</a></li>
+                        <li><a href="#">13. GSAP 패럴랙스 이펙트 : 가로/세로 효과</a></li>
                     </ul>
-                    
                 </div>
                 <!-- //blog__contents -->
 

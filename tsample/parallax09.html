@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Tutorial/webd</span>
-                <h1 class="title">GSAP 패럴랙스 이펙트 : 배경색 효과</h1>
+                <h1 class="title">GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2023. 06. 01.</span>
@@ -86,14 +86,14 @@
                     </div>
                     <div class="desc">
                         <div class="left">
-                            <span class="num">07</span>
-                            <div class="title">GSAP Parallax Effect : 배경색 효과</div>
+                            <span class="num">09</span>
+                            <div class="title">GSAP Parallax Effect : 메뉴 이동 효과</div>
                             <span class="difficulty">난이도 <span>중간</span></span>
                         </div>
                         <div class="right">
                             <div class="btn">소스 다운로드</div>
-                            <a href="https://webstoryboy.github.io/gsap2023/gsap07.html" target="_blank" class="sampleBtn">완성 화면</a>
-                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap07.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://webstoryboy.github.io/gsap2023/gsap09.html" target="_blank" class="sampleBtn">완성 화면</a>
+                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap09.html" target="_blank" class="sampleBtn">소스 보기</a>
                         </div>
                     </div>
                 </div>
@@ -103,12 +103,11 @@
                     <h2>소개</h2>
                     <p>
                         안녕하세요! 웹스토리보이입니다. 
-                        이번시간에는 배경색을 자연스럽게 변경하는 애니메이션을 만들어보겠습니다. 
-                        방법은 두가지로 설정할 수 있습니다. 
-                        자연스럽게 전체 배경에 색을 넣는 과정과, 해당 섹션의 <code>data</code>값을 이용해
-                        섹션마다 변경하는 방법입니다. 
-                        어떤 방법이든 자연스럽게 배경색을 변경할 수 있습니다. 
-                        그럼 시작해볼까요? 😘
+                        이번에는 메뉴를 클릭하면 이동하는 스크립트를 작성하겠습니다. 
+                        예전 자바스크립트 패럴랙스에서도 작업한 적이 있는데요! 
+                        GSAP 용은 스타일이 많이 틀린긴 합니다. 
+                        그래도 패럴랙스 사이트에서 없어서는 안되는 효과이기 때문에 열심히 작업해보겠습니다. 
+                        그럼 시작해볼까요? 😏
                     </p>      
                     
                     <!-- 광고 영역 -->
@@ -133,6 +132,7 @@
 
     &lt;!-- 웹폰트 설정 --&gt;
     &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
@@ -166,11 +166,10 @@
             text-decoration: none;
         }
         body {
-            --bg-color : #222;
-            background-color: var(--bg-color);
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background-color: #111;
         }
         #parallax__title {
             position: fixed;
@@ -209,29 +208,72 @@
             background: #fff;
             color: #000;
         }
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+        #parallax__nav li {
+            list-style: none;
+            display: inline;
+        }
+        #parallax__nav li a {
+            display: inline-block;
+            width: 30px; 
+            height: 30px;
+            padding: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #parallax__nav li a.active {
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+        }
 
         /* parallax__cont */
         #parallax__cont {
-            width: 100%;
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
         }
         .parallax__item {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;    
-            justify-content: center;
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            text-align: left;
+            margin-right: 0;
             position: relative;
+            padding-top: 15vw;
+        }
+        .parallax__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
         }
         .parallax__item__num {
+            font-size: 35vw;
             position: absolute;
-            right: 20px;
-            bottom: 20px;
-            font-size: 1vw;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
+            font-family: "Lato";
+            font-weight: 100;
+        }
+        .parallax__item:nth-child(even) .parallax__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
         }
         .parallax__item__imgWrap {
-            width: 50%;
-            margin-right: 30%;
-            padding-bottom: 26.25%;
+            width: 100%;
+            padding-bottom: 56.25%;
             background: #000;
             position: relative;
             overflow: hidden;
@@ -252,52 +294,51 @@
             filter: saturate(100%);
             transform: scale(1.025);
         }
-        .parallax__item__desc {
-            font-size: 3vw;
-            line-height: 1.4;
-            margin-top: 10vw;
-            margin-left: -4vw;
-            margin-right: 2vw;
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            word-break: keep-all;
-        }
-
         #section1 .parallax__item__img {
-            background-image: url(assets/img/images01@2.jpg);
+            background-image: url(img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(assets/img/images02@2.jpg);
+            background-image: url(img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(assets/img/images03@2.jpg);
+            background-image: url(img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(assets/img/images04@2.jpg);
+            background-image: url(img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(assets/img/images05@2.jpg);
+            background-image: url(img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(assets/img/images06@2.jpg);
+            background-image: url(img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(assets/img/images07@2.jpg);
+            background-image: url(img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(assets/img/images08@2.jpg);
+            background-image: url(img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(assets/img/images09@2.jpg);
+            background-image: url(img/images09@2.jpg);
+        }
+        .parallax__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+        }
+        .parallax__item:nth-child(even) .parallax__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header id="parallax__title"&gt;
-        &lt;h1&gt;GSAP Parallax Effect07&lt;/h1&gt;
-        &lt;p&gt;GSAP scrollTrigger - 배경색 효과&lt;/p&gt;
+        &lt;h1&gt;GSAP Parallax Effect09&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 메뉴 이동 효과&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
@@ -305,16 +346,32 @@
             &lt;li&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //parallax__title  --&gt;
 
+    &lt;nav id="parallax__nav"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#section1" class="active"&gt;s1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;s2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section3"&gt;s3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section4"&gt;s4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section5"&gt;s5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section6"&gt;s6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section7"&gt;s7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section8"&gt;s8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section9"&gt;s9&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- //parallax__nav --&gt;
+
     &lt;main id="parallax__cont"&gt;
-        &lt;section id="section1" class="parallax__item" data-bgcolor="#111111"&gt;
+        &lt;section id="section1" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section1&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -322,8 +379,9 @@
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
 
-        &lt;section id="section2" class="parallax__item" data-bgcolor="#593b22"&gt;
+        &lt;section id="section2" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section2&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -331,8 +389,9 @@
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
 
-        &lt;section id="section3" class="parallax__item" data-bgcolor="#245922"&gt;
+        &lt;section id="section3" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section3&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -340,8 +399,9 @@
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
 
-        &lt;section id="section4" class="parallax__item" data-bgcolor="#243859"&gt;
+        &lt;section id="section4" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section4&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -349,8 +409,9 @@
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
 
-        &lt;section id="section5" class="parallax__item" data-bgcolor="#3f2459"&gt;
+        &lt;section id="section5" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section5&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -358,8 +419,9 @@
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
 
-        &lt;section id="section6" class="parallax__item" data-bgcolor="#59243c"&gt;
+        &lt;section id="section6" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section6&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -367,8 +429,9 @@
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
 
-        &lt;section id="section7" class="parallax__item" data-bgcolor="#3f2459"&gt;
+        &lt;section id="section7" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section7&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -376,8 +439,9 @@
         &lt;/section&gt;
         &lt;!-- //section7 --&gt;
 
-        &lt;section id="section8" class="parallax__item" data-bgcolor="#222222"&gt;
+        &lt;section id="section8" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section8&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -385,8 +449,9 @@
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
 
-        &lt;section id="section9" class="parallax__item" data-bgcolor="#592624"&gt;
+        &lt;section id="section9" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section9&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
@@ -399,6 +464,7 @@
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
+        
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -409,77 +475,56 @@
 
                     <div>
                         <h3>2. 스크립트 작업하기</h3>
-                        <h4 data-num="03">2-1. 전체 배경 변경하기 </h4>
+                        <h4 data-num="03">2-1. 작업하기</h4>
                         <p>
-                            전체 배경에 색을 변경하기 위해서 CSS 변수를 사용하였습니다. 
-                            <code>body</code> 태그에 배경색을 변수에 값을 넣었습니다. 
-                            CSS에서 변수를 설정하는 것은 <code>--</code>로 표현하고 
-                            불러올 때에는 <code>var()</code> 이렇게 사용합니다. 
-                            gsap timeline을 사용하여 배경색을 변경하겠습니다. 
-                            <code>scrollTrigger</code>의 시작값과 끝나는 값을 설정합니다. 
-                            끝나는 값에는 <code>max</code> 속성 값을 설정할 수 있습니다. 
-                            이렇게 하고 원하는 배경색을 <code>to()</code> 메서드에 설정하면 배경색은 자연스럽게 변경됩니다. 
-                        </p>
-<pre><code class="language-css">body {
-    --bg-color : #222;
-    background-color: var(--bg-color);
-}</code></pre>
-<pre><code class="language-js">let bg = gsap.timeline({
-    scrollTrigger: {
-        start: 0,
-        end: "max",
-        scrub: true
-    }
-});
+                            우선 메뉴 9개의 선택자를 <code>links</code> 변수에 저장하기 위해 <code>gsap.utils.toArray</code>를 사용했습니다.
 
-bg.to("body", {"--bg-color": "red"})
-   .to("body", {"--bg-color": "green"})
-   .to("body", {"--bg-color": "blue"});
-</code></pre>
-                        
-                        <h4 data-num="04">2-2. data 값으로 변경하기</h4>
-                        <p>
-                            이번에는 섹션별로 배경색을 변경해보겠습니다. 
-                            섹션별로 <code>data-bgcolor</code>을 설정하여, 값을 불러와 변경하겠습니다. 
-                            꼭 섹션별로 색이 있을 필요는 없습니다. 
-                            다중 선택이기 때문에 <code>gsap.utils.toArray</code>와 <code>forEach()</code>를 사용했습니다. 
-                            이번에는 <code>ScrollTrigger.create</code>를 생성하여 트리거와 시작값, 끝나는 값을 설정합니다. 
-                            콜백 함수를 사용하여 <code>onEnter</code>와 <code>onEnterBack</code>를 설정하면 
-                            배경색은 자연스럽게 변경됩니다. 
-                            배경색 속도 조절은 <code>duration</code>으로 설정하면 됩니다. 
+                            <code>ScrollTrigger.create</code>를 만들고 trigger를 element에 설정했습니다. 
+                            여기서 element는 9개의 메뉴가 되겠죠! 
+                            <code>onToggle</code>을 이용하여 <code>setActive()</code> 메서드에 link를 보내줍니다. 
+                            <code>setActive</code> 메서드에서는 클래스 <code>active</code>를 지우고 붙이는 역할을 하고,
+                            link를 클릭하면 <code>gsap.to</code>를 이용해서 해당 영역까지 이동하게 됩니다. 
+                            해당 영역을 이동하기 위해서 <code>linkST</code>를 만들어서 이동할 수 있도록 설정했습니다. 
                         </p>
-<pre><code class="language-js">gsap.utils.toArray(".parallax__item").forEach((item) => {
-    let color = item.getAttribute("data-bgcolor");
+<pre><code class="language-js">let links = gsap.utils.toArray("#parallax__nav ul li a");
+
+links.forEach(link => {
+    let element = document.querySelector(link.getAttribute("href")),
+    
+    linkST = ScrollTrigger.create({
+        trigger: element,
+        start: "top top"
+    });
 
     ScrollTrigger.create({
-        trigger: item,
-        start: "top 50%",
-        end: "bottom 5%",
-        markers: true,
+        trigger: element,
+        start: "top center",
+        end: "bottom center",
+        onToggle: self => setActive(link)
+    });
 
-        onEnter: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
-        onEnterBack: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        gsap.to(window, {duration: 1, scrollTo: linkST.start, overwrite: "auto"});
     });
 });
-</code></pre>
+
+function setActive(link) {
+    links.forEach(el => el.classList.remove("active"));
+    link.classList.add("active");
+}</code></pre>
+                        
                         
                         
                     </div>
                     <div>
                         <h3>3. 마무리</h3>
                         <p>
-                            이번에는 비교적 간단하게 끝났습니다. 
-                            자바스크립트로 작업하면 복잡하고 자연스럽지 않은데,
-                            GSAP를 이용하면 자연스럽게 변경할 수 있습니다. 
-                            포트포리오 만들때 많이 활용하면 좋겠네요! 
-                            이상한 점이나 버그 있으면 언제나 댓글 부탁드립니다. 
-                            감사합니다. 수고하셨습니다. 🥲
+                            메뉴 이동 효과를 <code>scrollTrigger</code>를 이용해서 작업하였습니다. 
+                            구지 이걸 안써도 자바스크립트가 더 편할 것 같긴 하지만, 그래도 이렇게 사용하는 구나! 정도 이해하면 될 것 같습니다. 
+                            참고로 이것을 작업하기 위해서는 <code>ScrollToPlugin</code>이 설정되어 있어야 합니다. 
+                            그런 부분이 조금 불편하기 하지만 그래도 GSAP로 만들었다는게 중요하니깐요! 
+                            오늘은 여기까지 작업하겠습니다. 수고하셨습니다. 😝
                         </p>
                     </div>
                     
@@ -495,6 +540,8 @@ bg.to("body", {"--bg-color": "red"})
                         <li><a href="#">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
                         <li><a href="#">6. GSAP 패럴랙스 이펙트 : 텍스트 효과</a></li>
                         <li><a href="#">7. GSAP 패럴랙스 이펙트 : 배경색 효과</a></li>
+                        <li><a href="#">8. GSAP 패럴랙스 이펙트 : 진행바 효과</a></li>
+                        <li><a href="#">9. GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</a></li>
                     </ul>
                     
                 </div>
