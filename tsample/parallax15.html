@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Tutorial/webd</span>
-                <h1 class="title">GSAP 패럴랙스 이펙트 : 가로/세로 효과</h1>
+                <h1 class="title">GSAP 패럴랙스 이펙트 : 스무스 효과</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2023. 06. 01.</span>
@@ -86,14 +86,14 @@
                     </div>
                     <div class="desc">
                         <div class="left">
-                            <span class="num">13</span>
-                            <div class="title">GSAP Parallax Effect : 가로/세로 효과</div>
+                            <span class="num">15</span>
+                            <div class="title">GSAP Parallax Effect : 스무스 효과</div>
                             <span class="difficulty">난이도 <span>중간</span></span>
                         </div>
                         <div class="right">
                             <div class="btn">소스 다운로드</div>
-                            <a href="https://webstoryboy.github.io/gsap2023/gsap13.html" target="_blank" class="sampleBtn">완성 화면</a>
-                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap13.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://webstoryboy.github.io/gsap2023/gsap15.html" target="_blank" class="sampleBtn">완성 화면</a>
+                            <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap15.html" target="_blank" class="sampleBtn">소스 보기</a>
                         </div>
                     </div>
                 </div>
@@ -103,11 +103,15 @@
                     <h2>소개</h2>
                     <p>
                         안녕하세요! 웹스토리보이입니다. 
-                        가로 효과를 무사히 작업하였다면, 이제는 가로 세로 효과를 작업해보겠습니다. 
-                        가로와 세로가 결합된 형태이기 때문에 가로 효과보다는 조금 더 어려울 수 있습니다. 
-                        처음부터 가로 효과가 아닌 원하는 섹션만 가로 효과로 만들어야 하기 때문에 
-                        그 부분만 가로로 CSS 셋팅이 먼저 되어 있어야 합니다. 
-                        그럼 한번 만들어볼까요? 🙀
+                        이번에는 GSAP 효과를 조금 더 퀄리티 있게 만들 수 있는 효과입니다. 
+                        잘 만들어진 사이트의 대부분은 이 효과를 적용하지 않은 사이트들이 거의 없습니다. 
+                        바로 부드럽게 움직임을 주는 스무스 효과입니다. 
+                        스무스 효과를 적용하는 방법은 여러가지가 있습니다. 
+                        직접 짤 수도 있도, 플러그인을 이용하는 방법들이 있습니다. 
+                        여러가지를 다 써본 결과 지금 쓸려고 하는 lenis 효과가 가장 좋습니다. 
+                        사용법도 간단하고 버그도 가장 적습니다. 
+                        그래서 이것을 써보겠습니다. 
+                        혹시 이거보다 더 좋은거 있으면 서로 공유해요!
                     </p>      
                     
                     <!-- 광고 영역 -->
@@ -169,7 +173,7 @@
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
-            background-color: #333;
+            background-color: #000;
         }
         #parallax__title {
             position: fixed;
@@ -210,29 +214,47 @@
         }
 
         /* parallax__cont */
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+        }
         .parallax__item {
-            width: 100%;
-            height: 100vh;
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            text-align: left;
+            margin-right: 0;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 15vw;
+        }
+        .parallax__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
         }
         .parallax__item__num {
-            font-size: 5vw;
+            font-size: 35vw;
             position: absolute;
-            right: 20px;
-            bottom: 20px;
+            left: -5vw;
+            top: -13vw;
+            opacity: 0.07;
             font-family: "Lato";
             font-weight: 100;
-            z-index: 100;
+        }
+        .parallax__item:nth-child(even) .parallax__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .parallax__item__title {
+            padding-bottom: 5px;
+            font-weight: 400;
         }
         .parallax__item__imgWrap {
-            width: 30%;
-            padding-bottom: 18%;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
         }
         .parallax__item__img {
             position: absolute;
@@ -277,31 +299,43 @@
         #section9 .parallax__item__img {
             background-image: url(img/images09@2.jpg);
         }
-        #section1, #section3, #section5, #section7, #section9 {
-            background-color: #111;
+        .parallax__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            z-index: 100;
+            position: relative;
+            word-break: keep-all;
         }
-
-        /* option */
+        .parallax__item:nth-child(even) .parallax__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header id="parallax__title"&gt;
-        &lt;h1&gt;GSAP Parallax Effect13&lt;/h1&gt;
-        &lt;p&gt;GSAP scrollTrigger - 가로/세로 효과&lt;/p&gt;
+        &lt;h1&gt;GSAP Parallax Effect15&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 스무스 효과&lt;/p&gt;
         &lt;ul&gt;
-            &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap10.html"&gt;10&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap11.html"&gt;11&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="gsap12.html"&gt;12&lt;/a&gt;&lt;/li&gt;
-            &lt;li class="active"&gt;&lt;a href="gsap13.html"&gt;13&lt;/a&gt;&lt;/li&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap10.html"&gt;10&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap11.html"&gt;11&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap12.html"&gt;12&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap13.html"&gt;13&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="gsap14.html"&gt;14&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="active"&gt;&lt;a href="gsap15.html"&gt;15&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //parallax__title  --&gt;
@@ -309,75 +343,91 @@
     &lt;main id="parallax__cont"&gt;
         &lt;section id="section1" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section1&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
 
         &lt;section id="section2" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section2&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
 
-        &lt;main id="horizontal"&gt;
-            &lt;section id="section3" class="parallax__item"&gt;
-                &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
-                &lt;figure class="parallax__item__imgWrap"&gt;
-                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-            &lt;/section&gt;
-            &lt;!-- //section3 --&gt;
-
-            &lt;section id="section4" class="parallax__item"&gt;
-                &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
-                &lt;figure class="parallax__item__imgWrap"&gt;
-                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-            &lt;/section&gt;
-            &lt;!-- //section4 --&gt;
-
-            &lt;section id="section5" class="parallax__item"&gt;
-                &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
-                &lt;figure class="parallax__item__imgWrap"&gt;
-                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-            &lt;/section&gt;
-            &lt;!-- //section5 --&gt;
-
-            &lt;section id="section6" class="parallax__item"&gt;
-                &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
-                &lt;figure class="parallax__item__imgWrap"&gt;
-                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-            &lt;/section&gt;
-            &lt;!-- //section6 --&gt;
-
-            &lt;section id="section7" class="parallax__item"&gt;
-                &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
-                &lt;figure class="parallax__item__imgWrap"&gt;
-                    &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
-                &lt;/figure&gt;
-            &lt;/section&gt;
-            &lt;!-- //section7 --&gt;
-        &lt;/main&gt;
-
-        &lt;section id="section8" class="parallax__item"&gt;
-            &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
+        &lt;section id="section3" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section3&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+
+        &lt;section id="section4" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+
+        &lt;section id="section5" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+
+        &lt;section id="section6" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+
+        &lt;section id="section7" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+
+        &lt;section id="section8" class="parallax__item"&gt;
+            &lt;span class="parallax__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="parallax__item__imgWrap"&gt;
+                &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section8 --&gt;
 
         &lt;section id="section9" class="parallax__item"&gt;
             &lt;span class="parallax__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="parallax__item__title"&gt;section9&lt;/h2&gt;
             &lt;figure class="parallax__item__imgWrap"&gt;
                 &lt;div class="parallax__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
+            &lt;p class="parallax__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/main&gt;
@@ -385,8 +435,9 @@
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
-
+        
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -399,91 +450,46 @@
                         <h3>2. 스크립트 작업하기</h3>
                         <h4 data-num="03">2-1. 작업하기</h4>
                         <p>
-                            먼저 CSS 셋팅을 해야 합니다. 
-                            원하는 가로 영역을 <code>#horizontal</code>로 감싸고 다음과 같이 셋팅을 합니다. 
-                            5개의 섹션을 작업할 것이기 때문에 <code>500vw</code>로 설정햇습니다. 
+                            우선 lenis 라이브러리 소스가 연동되어 있어야 합니다. 
+                            자세한 사항은 <i><a href="https://github.com/studio-freight/lenis">lenis github</a></i>에 있으니 참고하시가 바랍니다. 
+                            깃헙 문서에 사용하는 방법이 나와있습니다. 
+                            자세한 사항은 문서를 참고하면 되고, 기본 사용 방법은 다음과 같이 아주 간단합니다. 
+                            이렇게만 하면 스크롤의 움직임 엄청 부드러워집니다. 
+                            물론 마우스 휠이 부드럽지 않으면 그 효과를 체감하지 못할 수도 있습니다. 
+                            지금까지 배운 스크롤 효과와 스므스 효과를 종합하여 마지막 예제를 만들면 됩니다. 
+                            그리고 공유해주세요!  
+                            물론 궁금한 점이나 안되는 건 질문하시면 됩니다. 
+                            또는 이런 효과를 만들고 싶은데 어떻게 하는지 모른다면 댓글 달아주세요! 
                         </p>
-<pre><code class="language-css">#parallax__cont {
-    overflow: hidden;
+<pre><code class="language-html">&lt;script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"&gt;&lt;/script&gt;</code></pre>
+<pre><code class="language-js">const lenis = new Lenis();
+
+lenis.on('scroll', (e) => {
+    console.log(e);
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf);
 }
-#horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    width: 500vw;
-}
-#horizontal &gt; section {
-    width: 100vw;
-}</code></pre>
-                        <p>
-                            먼저, const horizontal = document.querySelector("#horizontal");은 #horizontal ID를 가진 요소를 선택하여 horizontal 변수에 저장합니다. 
-                            이 요소는 스크롤 트리거로 사용될 것입니다.
 
-                            다음으로, gsap.utils.toArray("#horizontal > section")은 #horizontal 요소 내부에 있는 모든 section 요소를 선택하여 배열로 반환하는 코드입니다. 
-                            선택된 요소들은 <code>section</code> 변수에 저장됩니다.
-                        </p>
-                        <p>
-                            <code>gsap.to()</code> 메서드를 사용하여 선택한 section 요소들에 대한 애니메이션을 정의합니다.
-                            <i>xPercent: -100 * (section.length - 1)</i>은 section 배열 내의 요소들을 가로 축으로 이동시키는 애니메이션 속성입니다. 
-                            -100 * (section.length - 1)은 마지막 요소를 제외한 모든 요소들을 왼쪽으로 100%만큼 이동시킵니다.
-                            <code>ease: "none"</code>은 애니메이션의 움직임을 부드럽게 하는 이징 효과를 적용하지 않는 것을 의미합니다.
-                        </p>
-                        <p>
-                            scrollTrigger 객체는 스크롤 이벤트와 관련된 설정을 정의하며, 
-                            <code>trigger: horizontal</code>은 스크롤 트리거로 사용될 요소를 지정합니다. 
-                            위에서 선택한 horizontal 요소를 지정했습니다.
-
-                            <code>start: "top top"</code>은 트리거 요소가 스크롤되기 시작하는 시점을 지정합니다. 
-                            여기서는 스크롤이 맨 위로 이동했을 때를 의미합니다.
-                        </p>
-                        <p>
-                            <i>end: () => "+=" + (horizontal.offsetWidth - innerWidth)</i>는 애니메이션이 끝나는 시점을 지정하는 옵션입니다. 
-                            horizontal.offsetWidth - innerWidth는 horizontal 요소의 너비에서 현재 뷰포트의 너비를 뺀 값으로, 애니메이션이 끝나는 지점을 설정합니다.
-
-                            pin: true는 스크롤 트리거 요소를 고정시키는 옵션입니다. 
-                            즉, 트리거 요소가 스크롤되면서 다른 요소들이 지나가는 것처럼 보이게 됩니다.
-                        </p>
-                        <p>
-                            <code>scrub: 1</code>은 트리거 요소가 스크롤되는 동안 애니메이션을 부드럽게 진행하기 위한 옵션입니다.
-                            <code>snapTo: 1 / (section.length - 1)</code>은 스크롤 위치를 요소들의 위치에 스냅하는 옵션입니다. 
-                            1 / (section.length - 1)은 각 요소 사이의 스냅 간격을 설정합니다.
-                            <code>inertia: false</code>는 스냅 시의 관성 효과를 비활성화합니다.
-                            <code>duration: {min: 0.1, max: 0.1}</code>은 스냅 애니메이션의 최소 및 최대 지속 시간을 설정합니다.
-                            <code>invalidateOnRefresh: true</code>는 페이지 새로고침 시 스크롤 트리거 위치를 재계산하도록 설정합니다.
-                            <code>anticipatePin: 1</code>은 스크롤 트리거 요소의 위치를 예측하여 부드럽게 고정하는 옵션입니다.
-                        </p>
-<pre><code class="language-js">const horizontal = document.querySelector("#horizontal");
-const section = gsap.utils.toArray("#horizontal > section");
-
-gsap.to(section, {
-    xPercent: -100 * (section.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: horizontal,
-        start: "top top",
-        end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
-        pin: true,
-        scrub: 1,
-        snap: {
-            snapTo: 1 / (section.length - 1),
-            inertia: false,
-            duration: {min: 0.1, max: 0.1}
-        },
-        invalidateOnRefresh: true,
-        anticipatePin: 1
-    }
-});</code></pre>
+requestAnimationFrame(raf);</code></pre>
                         
-                        
+
                     </div>
                     <div>
                         <h3>3. 마무리</h3>
                         <p>
-                            조금 어려운 부분들이 나오기는 했지만, 이렇게 하면 세로 / 가로 모드가 완성됩니다. 
-                            최대한 간단하게 스크립트를 구성하였고, 포폴 만드는데 크게 어려움이 없을거라고 생각이 듭니다. 
-                            지금가지 가로 모드, 세로가로 모드를 완성하였습니다. 
-                            그럼 이렇게 만든 모드에서 애니메이션까지 나타나게 하면 완벽하겠죠^^ 
-                            지금까지 배웠던 것을 접목시키면 훌륭한 패럴랙스 사이트가 완성될 겁니다. 
-                            수고하셨습니다. 🥱
+                            지금까지 GSAP 패럴랙스 효과 기본 15가지를 배웠습니다. 
+                            코딩을 처음해보시는 분들은 다소 어렵다고 느낄 수 있겠지만, 
+                            기존에 코딩을 해본 분들은 쉽게 이해할 수 있지 않을까? 생각이 들지만... 
+                            머 어째든 여기까지 공부하는냐고 수고하셨습니다. 
+                            저도 수고했구요!!! 
+                            지금까지 만든 예제나 소스를 코드펜이나 호스팅에 올려서 공유해주세요! 
+                            잘 작업했나 봐드릴께요! 
+                            그럼 수고하셨습니다. 
+                            궁금한 사항은 언제든지 댓글로 써주세요! 
+                            최대한 빨리 답변 달도록 하겠습니다. 안녕 🐹🐯🦁🐷🦊
                         </p>
                     </div>
                     
@@ -492,21 +498,21 @@ gsap.to(section, {
                     
                     <h3>예제 목록</h3>
                     <ul class="refer5">
-                        <li><a href="#">1. GSAP 패럴랙스 이펙트 : 기본 애니메이션</a></li>
-                        <li><a href="#">2. GSAP 패럴랙스 이펙트 : Pin 애니메이션</a></li>
-                        <li><a href="#">3. GSAP 패럴랙스 이펙트 : Pin 배경 고정하기</a></li>
-                        <li><a href="#">4. GSAP 패럴랙스 이펙트 : 이질감 효과</a></li>
-                        <li><a href="#">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
-                        <li><a href="#">6. GSAP 패럴랙스 이펙트 : 텍스트 효과</a></li>
-                        <li><a href="#">7. GSAP 패럴랙스 이펙트 : 배경색 효과</a></li>
-                        <li><a href="#">8. GSAP 패럴랙스 이펙트 : 진행바 효과</a></li>
-                        <li><a href="#">9. GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</a></li>
-                        <li><a href="#">10. GSAP 패럴랙스 이펙트 : 메뉴 축소 효과</a></li>
-                        <li><a href="#">11. GSAP 패럴랙스 이펙트 : 메뉴 숨기기 효과</a></li>
-                        <li><a href="#">12. GSAP 패럴랙스 이펙트 : 가로 효과</a></li>
-                        <li><a href="#">13. GSAP 패럴랙스 이펙트 : 가로/세로 효과</a></li>
-                        <li><a href="#">14. GSAP 패럴랙스 이펙트 : 가로/세로 나타나기 효과</a></li>
-                        <li><a href="#">15. GSAP 패럴랙스 이펙트 : 스무스 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1909">1. GSAP 패럴랙스 이펙트 : 기본 애니메이션</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1910">2. GSAP 패럴랙스 이펙트 : Pin 애니메이션</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1911">3. GSAP 패럴랙스 이펙트 : Pin 배경 고정하기</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1912">4. GSAP 패럴랙스 이펙트 : 이질감 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1913">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1914">6. GSAP 패럴랙스 이펙트 : 텍스트 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1915">7. GSAP 패럴랙스 이펙트 : 배경색 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1916">8. GSAP 패럴랙스 이펙트 : 진행바 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1917">9. GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1918">10. GSAP 패럴랙스 이펙트 : 메뉴 축소 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1919">11. GSAP 패럴랙스 이펙트 : 메뉴 숨기기 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1920">12. GSAP 패럴랙스 이펙트 : 가로 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1921">13. GSAP 패럴랙스 이펙트 : 가로/세로 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1922">14. GSAP 패럴랙스 이펙트 : 가로/세로 나타나기 효과</a></li>
+                        <li><a href="https://webstoryboy.co.kr/1923">15. GSAP 패럴랙스 이펙트 : 스무스 효과</a></li>
                     </ul>
                 </div>
                 <!-- //blog__contents -->

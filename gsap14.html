@@ -18,11 +18,10 @@
             text-decoration: none;
         }
         body {
-            --bg-color : #222;
-            background-color: var(--bg-color);
             color: #fff;
             font-family: "NexonLv1Gothic";
             font-weight: 300;
+            background-color: #333;
         }
         #parallax__title {
             position: fixed;
@@ -63,30 +62,29 @@
         }
 
         /* parallax__cont */
-        #parallax__cont {
-            width: 100%;
-        }
         .parallax__item {
             width: 100%;
             height: 100vh;
-            display: flex;
-            align-items: center;    
-            justify-content: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .parallax__item__num {
+            font-size: 5vw;
             position: absolute;
             right: 20px;
             bottom: 20px;
-            font-size: 1vw;
+            font-family: "Lato";
+            font-weight: 100;
+            z-index: 100;
         }
         .parallax__item__imgWrap {
-            width: 50%;
-            margin-right: 30%;
-            padding-bottom: 26.25%;
-            background: #000;
+            width: 30%;
+            padding-bottom: 18%;
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
         .parallax__item__img {
             position: absolute;
@@ -104,19 +102,6 @@
             filter: saturate(100%);
             transform: scale(1.025);
         }
-        .parallax__item__desc {
-            font-size: 3vw;
-            line-height: 1.4;
-            margin-top: 10vw;
-            margin-left: -4vw;
-            margin-right: 2vw;
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            word-break: keep-all;
-        }
-
         #section1 .parallax__item__img {
             background-image: url(img/images01@2.jpg);
         }
@@ -144,12 +129,28 @@
         #section9 .parallax__item__img {
             background-image: url(img/images09@2.jpg);
         }
+        #section1, #section3, #section5, #section7, #section9 {
+            background-color: #111;
+        }
+
+        /* option */
+        #parallax__cont {
+            overflow: hidden;
+        }
+        #horizontal {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500vw;
+        }
+        #horizontal > section {
+            width: 100vw;
+        }
     </style>
 </head>
 <body>
     <header id="parallax__title">
-        <h1>GSAP Parallax Effect07</h1>
-        <p>GSAP scrollTrigger - 배경색 효과</p>
+        <h1>GSAP Parallax Effect14</h1>
+        <p>GSAP scrollTrigger - 가로/세로 나타나기 효과</p>
         <ul>
             <li><a href="gsap01.html">1</a></li>
             <li><a href="gsap02.html">2</a></li>
@@ -157,98 +158,91 @@
             <li><a href="gsap04.html">4</a></li>
             <li><a href="gsap05.html">5</a></li>
             <li><a href="gsap06.html">6</a></li>
-            <li class="active"><a href="gsap07.html">7</a></li>
+            <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
             <li><a href="gsap10.html">10</a></li>
             <li><a href="gsap11.html">11</a></li>
             <li><a href="gsap12.html">12</a></li>
             <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
+            <li class="active"><a href="gsap14.html">14</a></li>
             <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
 
     <main id="parallax__cont">
-        <section id="section1" class="parallax__item" data-bgcolor="#111111">
+        <section id="section1" class="parallax__item">
             <span class="parallax__item__num">01</span>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
         </section>
         <!-- //section1 -->
 
-        <section id="section2" class="parallax__item" data-bgcolor="#593b22">
+        <section id="section2" class="parallax__item">
             <span class="parallax__item__num">02</span>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
         </section>
         <!-- //section2 -->
 
-        <section id="section3" class="parallax__item" data-bgcolor="#245922">
-            <span class="parallax__item__num">03</span>
-            <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img"></div>
-            </figure>
-            <p class="parallax__item__desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
-        </section>
-        <!-- //section3 -->
+        <main id="horizontal">
+            <section id="section3" class="parallax__item">
+                <span class="parallax__item__num">03</span>
+                <figure class="parallax__item__imgWrap">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section3 -->
 
-        <section id="section4" class="parallax__item" data-bgcolor="#243859">
-            <span class="parallax__item__num">04</span>
-            <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img"></div>
-            </figure>
-            <p class="parallax__item__desc">모든 일에는 기본을 중요하게 생각한다.</p>
-        </section>
-        <!-- //section4 -->
+            <section id="section4" class="parallax__item">
+                <span class="parallax__item__num">04</span>
+                <figure class="parallax__item__imgWrap img4">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section4 -->
 
-        <section id="section5" class="parallax__item" data-bgcolor="#3f2459">
-            <span class="parallax__item__num">05</span>
-            <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img"></div>
-            </figure>
-            <p class="parallax__item__desc">열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.</p>
-        </section>
-        <!-- //section5 -->
+            <section id="section5" class="parallax__item">
+                <span class="parallax__item__num">05</span>
+                <figure class="parallax__item__imgWrap img5">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section5 -->
 
-        <section id="section6" class="parallax__item" data-bgcolor="#59243c">
-            <span class="parallax__item__num">06</span>
-            <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img"></div>
-            </figure>
-            <p class="parallax__item__desc">천 마디 말보단 하나의 행동이 더 값지다.</p>
-        </section>
-        <!-- //section6 -->
+            <section id="section6" class="parallax__item">
+                <span class="parallax__item__num">06</span>
+                <figure class="parallax__item__imgWrap img6">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section6 -->
 
-        <section id="section7" class="parallax__item" data-bgcolor="#3f2459">
-            <span class="parallax__item__num">07</span>
-            <figure class="parallax__item__imgWrap">
-                <div class="parallax__item__img"></div>
-            </figure>
-            <p class="parallax__item__desc">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
-        </section>
-        <!-- //section7 -->
+            <section id="section7" class="parallax__item">
+                <span class="parallax__item__num">07</span>
+                <figure class="parallax__item__imgWrap img7">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section7 -->
+        </main>
 
-        <section id="section8" class="parallax__item" data-bgcolor="#222222">
+        <section id="section8" class="parallax__item">
             <span class="parallax__item__num">08</span>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc">나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다.</p>
         </section>
         <!-- //section8 -->
 
-        <section id="section9" class="parallax__item" data-bgcolor="#592624">
+        <section id="section9" class="parallax__item">
             <span class="parallax__item__num">09</span>
             <figure class="parallax__item__imgWrap">
                 <div class="parallax__item__img"></div>
             </figure>
-            <p class="parallax__item__desc">꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.</p>
         </section>
         <!-- //section9 -->
     </main>
@@ -257,38 +251,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
-        //01 전체 배경 변경하기 
-        // let bg = gsap.timeline({
-        //     scrollTrigger: {
-        //         start: 0,
-        //         end: "max",
-        //         scrub: true
-        //     }
-        // });
-        
-        // bg.to("body", {"--bg-color": "red"})
-        //   .to("body", {"--bg-color": "green"})
-        //   .to("body", {"--bg-color": "blue"});
+        const horizontal = document.querySelector("#horizontal");
+        const section = gsap.utils.toArray("#horizontal > section");
 
-        //02 data 값으로 변경하기
-        gsap.utils.toArray(".parallax__item").forEach((item) => {
-            let color = item.getAttribute("data-bgcolor");
+        let scrollTween = gsap.to(section, {
+            xPercent: -100 * (section.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: horizontal,
+                start: "top top",
+                end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
+                pin: true,
+                scrub: 1,
+                // snap: {
+                //     snapTo: 1 / (section.length - 1),
+                //     inertia: false,
+                //     duration: {min: 0.1, max: 0.1}
+                // },
+                invalidateOnRefresh: true,
+                anticipatePin: 1
+            }
+        });
 
-            ScrollTrigger.create({
-                trigger: item,
-                start: "top 50%",
-                end: "bottom 5%",
-                markers: true,
+        gsap.to(".img4", {
+            y: -200,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img4",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                markers: false,
+                id: "img4"
+            }
+        });
 
-                onEnter: () => gsap.to("body", {
-                    backgroundColor: color,
-                    duration: 1.4
-                }),
-                onEnterBack: () => gsap.to("body", {
-                    backgroundColor: color,
-                    duration: 1.4
-                }),
-            });
+        gsap.to(".img5", {
+            rotation: 720,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img5",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                markers: false,
+                id: "img5"
+            }
+        });
+
+        gsap.to(".img6", {
+            scale: 0.3,
+            duration: 2,
+            ease: "elastic",
+            scrollTrigger: {
+                trigger: ".img6",
+                containerAnimation: scrollTween,
+                start: "left center",
+                toggleActions: "play none reverse none",
+                markers: false,
+                id: "img6"
+            }
         });
     </script>
 </body>
