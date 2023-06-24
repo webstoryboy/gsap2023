@@ -2,6 +2,8 @@
 
 #GSAP Parallax Effect
 
+https://webstoryboy.github.io/gsap2023/gsap01.html
+
 <h3>예제 목록</h3>
 <ul class="refer5">
     <li><a href="https://webstoryboy.co.kr/1909">1. GSAP 패럴랙스 이펙트 : 기본 애니메이션</a></li>
