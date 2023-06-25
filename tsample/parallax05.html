@@ -81,8 +81,8 @@
             </div>
             <div class="blog__inner container">
                 <div id="youtube" class="blog__contents__intro">
-                    <div class="video nonex resizable draggable sampleBtn3">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="video resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/9lnfRXTXzL0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
                         <div class="left">
@@ -94,6 +94,7 @@
                             <div class="btn">소스 다운로드</div>
                             <a href="https://webstoryboy.github.io/gsap2023/gsap05.html" target="_blank" class="sampleBtn">완성 화면</a>
                             <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap05.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
                         </div>
                     </div>
                 </div>
@@ -500,19 +501,24 @@ const animate = (item) =&gt; {
                             선택 요소도 <code>reveal</code>로 변경했습니다.
                             이렇게 설정해도 애니메이션은 변함이 없이 똑같이 나옵니다. 
                         </p>
-<pre><code class="language-js">gsap.utils.toArray(".reveal").forEach(item => {
-    gsap.to(item, {
-        yPercent: -100,
-        duration: 0.5,
-        scrollTrigger: {
-            trigger: item,
-            start: "top bottom", 
-            end: "bottom top",
-            markers: true,
-            scrub: 0.5
-        },  
+<pre><code class="language-js">gsap.utils.toArray(".reveal").forEach((item) =&gt; {
+    ScrollTrigger.create({
+        trigger: item,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: true,
+        onEnter: () =&gt; {animate(item)}, 
     });
+
+    item.style.opacity = "0";
 });
+
+const animate = (item) =&gt; {
+    gsap.fromTo(item, 
+        {autoAlpha: 0, x: 100, y: 0}, 
+        {autoAlpha: 1, x: 0, y: 0, duration: 1.25, overwrite: "auto", ease: "expo"}
+    );
+}
 </code></pre>
                         
                         <h4 data-num="05">2-3. 애니메이션 위치 설정하기</h4>
@@ -643,8 +649,8 @@ gsap.utils.toArray(".reveal").forEach((item) => {
 
     ScrollTrigger.create({
         trigger: item,
-        // start: "top 80%",
-        // end: "bottom 20%",
+        // start: "top bottom",
+        // end: "bottom top",
         markers: true,
         onEnter: () => {animate(item)}, 
     });
@@ -667,8 +673,14 @@ gsap.utils.toArray(".reveal").forEach((item) => {
                         </p>
                     </div>
                     
-                    <!-- 레퍼런스 -->
                     <hr>
+                    <!-- 레퍼런스 -->
+
+                    <div class="right_refer">
+                        <a href="https://webstoryboy.github.io/gsap2023/gsap05.html" target="_blank" class="sampleBtn">완성 화면</a>
+                        <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap05.html" target="_blank" class="sampleBtn">소스 보기</a>
+                        <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
+                    </div>
                     
                     <h3>예제 목록</h3>
                     <ul class="refer5">

@@ -81,8 +81,8 @@
             </div>
             <div class="blog__inner container">
                 <div id="youtube" class="blog__contents__intro">
-                    <div class="video nonex resizable draggable sampleBtn3">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="video resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gzJnKZGsB-Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
                         <div class="left">
@@ -94,6 +94,7 @@
                             <div class="btn">소스 다운로드</div>
                             <a href="https://webstoryboy.github.io/gsap2023/gsap06.html" target="_blank" class="sampleBtn">완성 화면</a>
                             <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap06.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
                         </div>
                     </div>
                 </div>
@@ -505,7 +506,7 @@ text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
     let theText = text.innerText;
     let newText = "";
 
-    for(let i=0; i&gt;text.innerText.length; i++){
+    for(let i=0; i&lt;text.innerText.length; i++){
         newText += "&lt;span aria-hidden='true'&gt;";
         if (text.innerText[i] == " "){
             newText += "&nbsp;"
@@ -514,7 +515,6 @@ text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
         }
         newText += "&lt;/span&gt;";
     }
-
     text.innerHTML = newText;
     text.setAttribute("aria-label", theText);
 });
@@ -540,8 +540,8 @@ text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
                             <code>duratioin</code>과 <code>stagger</code> 등을 통해 세밀하게 조절하면 창의적인 애니메이션을 구현할 수 있습니다. 
                         </p>
 <pre><code class="language-js">gsap.from(".split span", {
-    y: "100%",
-    opacity: 0,
+    yPercent: 100,
+    autoAlpha: 0,
     duration: 2,
     ease: "circ.out",
     stagger: 0.1,
@@ -552,22 +552,6 @@ text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
         end: "+=400",
         markers: true,
         scrub: 1, 
-    }
-});
-</code></pre>
-<pre><code class="language-js">gsap.from(".split span", {
-    yPercent: 100,
-    opacity: 0,
-    duration: 0.8,
-    ease: "circ.out",
-    stagger: 0.03,
-    
-    scrollTrigger: {
-        trigger: ".split",
-        start: "top center",
-        end: "+=400",
-        markers: true,
-        // scrub: 1, 
     }
 });
 </code></pre>
@@ -588,8 +572,8 @@ text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
                         </p>
 <pre><code class="language-js">gsap.utils.toArray(".split").forEach((text) => {
     gsap.from(text.querySelectorAll("span"), {
-        y: "100%",
-        opacity: 0,
+        yPercent: 100,
+        outoAlpha: 0,
         duration: 1,
         ease: "circ.out",
         //stagger: 0.04,
@@ -635,12 +619,14 @@ targets.forEach((target) => {
         opacity: 0,
         duration: 1,
         ease: "circ.out",
-        stagger: 0.06,
-
+        stagger: {
+            amount: 1,
+            from: "random"
+        },
         scrollTrigger: {
             trigger: target,
-            start: "top 75%",
-            end: "bottom center",
+            start: "top bottom",
+            end: "+=400",
             markers: true,
         }
     });
@@ -658,8 +644,17 @@ targets.forEach((target) => {
                         </p>
                     </div>
                     
-                    <!-- 레퍼런스 -->
                     <hr>
+                    
+                    <!-- 광고영역 -->
+                    <!-- //광고영역 -->
+
+                    <!-- 레퍼런스 -->
+                    <div class="right_refer">
+                        <a href="https://webstoryboy.github.io/gsap2023/gsap06.html" target="_blank" class="sampleBtn">완성 화면</a>
+                        <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap06.html" target="_blank" class="sampleBtn">소스 보기</a>
+                        <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
+                    </div>
                     
                     <h3>예제 목록</h3>
                     <ul class="refer5">

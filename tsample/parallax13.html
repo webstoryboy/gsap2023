@@ -81,8 +81,8 @@
             </div>
             <div class="blog__inner container">
                 <div id="youtube" class="blog__contents__intro">
-                    <div class="video nonex resizable draggable sampleBtn3">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="video resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YPzwvzFfCfU" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
                         <div class="left">
@@ -94,6 +94,7 @@
                             <div class="btn">소스 다운로드</div>
                             <a href="https://webstoryboy.github.io/gsap2023/gsap13.html" target="_blank" class="sampleBtn">완성 화면</a>
                             <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap13.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
                         </div>
                     </div>
                 </div>
@@ -251,31 +252,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         #section1, #section3, #section5, #section7, #section9 {
             background-color: #111;
@@ -410,11 +411,11 @@
 }
 #horizontal {
     display: flex;
-    flex-wrap: wrap;
-    width: 500vw;
+    flex-wrap: nowrap;
+    width: 500%;
 }
 #horizontal &gt; section {
-    width: 100vw;
+    width: 100%;
 }</code></pre>
                         <p>
                             먼저, const horizontal = document.querySelector("#horizontal");은 #horizontal ID를 가진 요소를 선택하여 horizontal 변수에 저장합니다. 
@@ -454,10 +455,10 @@
                             <code>anticipatePin: 1</code>은 스크롤 트리거 요소의 위치를 예측하여 부드럽게 고정하는 옵션입니다.
                         </p>
 <pre><code class="language-js">const horizontal = document.querySelector("#horizontal");
-const section = gsap.utils.toArray("#horizontal > section");
+const sections = gsap.utils.toArray("#horizontal > section");
 
 gsap.to(section, {
-    xPercent: -100 * (section.length - 1),
+    xPercent: -100 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
         trigger: horizontal,
@@ -466,7 +467,7 @@ gsap.to(section, {
         pin: true,
         scrub: 1,
         snap: {
-            snapTo: 1 / (section.length - 1),
+            snapTo: 1 / (sections.length - 1),
             inertia: false,
             duration: {min: 0.1, max: 0.1}
         },
@@ -489,8 +490,18 @@ gsap.to(section, {
                         </p>
                     </div>
                     
-                    <!-- 레퍼런스 -->
                     <hr>
+
+                    <hr>
+                    <!-- 광고영역 -->
+                    <!-- //광고영역 -->
+
+                    <!-- 레퍼런스 -->
+                    <div class="right_refer">
+                        <a href="https://webstoryboy.github.io/gsap2023/gsap13.html" target="_blank" class="sampleBtn">완성 화면</a>
+                        <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap13.html" target="_blank" class="sampleBtn">소스 보기</a>
+                        <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
+                    </div>
                     
                     <h3>예제 목록</h3>
                     <ul class="refer5">

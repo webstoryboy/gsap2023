@@ -81,8 +81,8 @@
             </div>
             <div class="blog__inner container">
                 <div id="youtube" class="blog__contents__intro">
-                    <div class="video nonex resizable draggable sampleBtn3">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="video resizable draggable sampleBtn3">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z2NeyjasCdY" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
                         <div class="left">
@@ -94,6 +94,7 @@
                             <div class="btn">소스 다운로드</div>
                             <a href="https://webstoryboy.github.io/gsap2023/gsap10.html" target="_blank" class="sampleBtn">완성 화면</a>
                             <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap10.html" target="_blank" class="sampleBtn">소스 보기</a>
+                            <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
                         </div>
                     </div>
                 </div>
@@ -302,31 +303,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         .parallax__item__desc {
             font-size: 4vw;
@@ -345,8 +346,8 @@
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header id="parallax__title"&gt;
-        &lt;h1&gt;GSAP Parallax Effect09&lt;/h1&gt;
-        &lt;p&gt;GSAP scrollTrigger - 메뉴 이동 효과&lt;/p&gt;
+        &lt;h1&gt;GSAP Parallax Effect10&lt;/h1&gt;
+        &lt;p&gt;GSAP scrollTrigger - 메뉴 축소 효과&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;&lt;a href="gsap01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="gsap02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
@@ -510,7 +511,10 @@
 <pre><code class="language-js">ScrollTrigger.create({
     start: "top -80",
     end: 99999,
-    toggleClass: {className: "is-active", targets: "#parallax__nav"}
+    toggleClass: {
+        className: "is-active", 
+        targets: "#parallax__nav"
+    }
 });</code></pre>
                         
                         
@@ -525,9 +529,18 @@
                             그럼 수고하셨습니다. 😱
                         </p>
                     </div>
-                    
-                    <!-- 레퍼런스 -->
+
                     <hr>
+
+                    <!-- 광고영역 -->
+                    <!-- //광고영역 -->
+
+                    <!-- 레퍼런스 -->
+                    <div class="right_refer">
+                        <a href="https://webstoryboy.github.io/gsap2023/gsap10.html" target="_blank" class="sampleBtn">완성 화면</a>
+                        <a href="https://github.com/webstoryboy/gsap2023/blob/main/gsap10.html" target="_blank" class="sampleBtn">소스 보기</a>
+                        <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq" target="_blank" class="sampleBtn">유튜브</a>
+                    </div>
                     
                     <h3>예제 목록</h3>
                     <ul class="refer5">
