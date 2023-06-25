@@ -2,8 +2,8 @@
 
 #GSAP Parallax Effect
 <h3>샘플 예졔</h3>
-https://webstoryboy.github.io/gsap2023/gsap01.html    
-https://webstoryboy.github.io/gsap2023/gsap02.html    
+https://webstoryboy.github.io/gsap2023/gsap01.html   
+https://webstoryboy.github.io/gsap2023/gsap02.html       
 https://webstoryboy.github.io/gsap2023/gsap03.html    
 https://webstoryboy.github.io/gsap2023/gsap04.html    
 https://webstoryboy.github.io/gsap2023/gsap05.html    
