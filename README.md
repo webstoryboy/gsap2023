@@ -6,7 +6,7 @@
     <li>https://www.youtube.com/playlist?list=PL4UVBBIc6giL8-6jvrClimg0cFL-Muqiq</li>
 </ul>
 
-<h3>샘플 예졔</h3>
+<h3>샘플 예제</h3>
 <ul class="refer5">
     <li>https://webstoryboy.github.io/gsap2023/gsap01.html</li>
     <li>https://webstoryboy.github.io/gsap2023/gsap02.html</li>
