@@ -2,7 +2,24 @@
 
 #GSAP Parallax Effect
 <h3>샘플 예졔</h3>
-https://webstoryboy.github.io/gsap2023/gsap01.html   
+<ul class="refer5">
+    <li>https://webstoryboy.github.io/gsap2023/gsap01.html</li>
+    <li><a href="https://webstoryboy.co.kr/1910">2. GSAP 패럴랙스 이펙트 : Pin 애니메이션</a></li>
+    <li><a href="https://webstoryboy.co.kr/1911">3. GSAP 패럴랙스 이펙트 : Pin 배경 고정하기</a></li>
+    <li><a href="https://webstoryboy.co.kr/1912">4. GSAP 패럴랙스 이펙트 : 이질감 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1913">5. GSAP 패럴랙스 이펙트 : 나타나기 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1914">6. GSAP 패럴랙스 이펙트 : 텍스트 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1915">7. GSAP 패럴랙스 이펙트 : 배경색 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1916">8. GSAP 패럴랙스 이펙트 : 진행바 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1917">9. GSAP 패럴랙스 이펙트 : 메뉴 이동 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1918">10. GSAP 패럴랙스 이펙트 : 메뉴 축소 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1919">11. GSAP 패럴랙스 이펙트 : 메뉴 숨기기 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1920">12. GSAP 패럴랙스 이펙트 : 가로 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1921">13. GSAP 패럴랙스 이펙트 : 가로/세로 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1922">14. GSAP 패럴랙스 이펙트 : 가로/세로 나타나기 효과</a></li>
+    <li><a href="https://webstoryboy.co.kr/1923">15. GSAP 패럴랙스 이펙트 : 스무스 효과</a></li>
+</ul>
+  
 https://webstoryboy.github.io/gsap2023/gsap02.html       
 https://webstoryboy.github.io/gsap2023/gsap03.html    
 https://webstoryboy.github.io/gsap2023/gsap04.html    
