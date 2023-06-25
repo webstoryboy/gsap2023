@@ -1,8 +1,23 @@
 # gsap2023
 
 #GSAP Parallax Effect
+<h3>샘플 예졔</h3>
+https://webstoryboy.github.io/gsap2023/gsap01.html    
+https://webstoryboy.github.io/gsap2023/gsap02.html    
+https://webstoryboy.github.io/gsap2023/gsap03.html    
+https://webstoryboy.github.io/gsap2023/gsap04.html    
+https://webstoryboy.github.io/gsap2023/gsap05.html    
+https://webstoryboy.github.io/gsap2023/gsap06.html    
+https://webstoryboy.github.io/gsap2023/gsap07.html    
+https://webstoryboy.github.io/gsap2023/gsap08.html    
+https://webstoryboy.github.io/gsap2023/gsap09.html    
+https://webstoryboy.github.io/gsap2023/gsap10.html    
+https://webstoryboy.github.io/gsap2023/gsap11.html    
+https://webstoryboy.github.io/gsap2023/gsap12.html    
+https://webstoryboy.github.io/gsap2023/gsap13.html    
+https://webstoryboy.github.io/gsap2023/gsap14.html    
+https://webstoryboy.github.io/gsap2023/gsap15.html    
 
-https://webstoryboy.github.io/gsap2023/gsap01.html
 
 <h3>예제 목록</h3>
 <ul class="refer5">
