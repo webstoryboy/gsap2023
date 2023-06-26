@@ -123,31 +123,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         .parallax__item__desc {
             font-size: 4vw;
@@ -161,14 +161,10 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-
         /* option */
-        /* .split {
-            overflow: hidden;
-        }*/
-        /* .split > span {
+        .split > span {
             display: inline-block;
-        }  */
+        }
     </style>
 </head>
 <body>
@@ -185,12 +181,6 @@
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
-            <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -292,17 +282,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script>
-        // 01. 텍스트 분리하기 
-        // let theText = document.querySelector(".split");
-        // let splitText = theText.innerText;
-        // let splitWrap = splitText.split('').join('</span><span>');
-        // theText.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+        // 01. 텍스트 분리하기
+        // let text = document.querySelector(".split");
+        // let splitText = text.innerText;
+        // let splitWrap = splitText.split("").join("</span><span>");
+        // text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
 
         // 02. 모든 텍스트 분리하기
         // document.querySelectorAll(".split").forEach(text => {
-        //     let splitWrap = text.innerText.split('').join("</span><span aria-hidden='true'>");
-        //     text.innerHTML = "<span aria-hidden='true'>"+ splitWrap +"</span>";
-        //     text.setAttribute("aria-label", text.innerText);
+        //     let splitWrap = text.innerText.split("").join("</span><span aria-hidddn='true'>");
+        //     text.innerHTML = "<span aria-hidddn='true'>" + splitWrap + "</span>";
+        //     text.setAttribute("aira-label", text.innerText)
         // });
 
         // 03. 모든 텍스트 분리하기 : 여백 표현하기
@@ -312,77 +302,75 @@
 
         //     for(let i=0; i<text.innerText.length; i++){
         //         newText += "<span aria-hidden='true'>";
-        //         if (text.innerText[i] == " "){
-        //             newText += "&nbsp;"
+        //         if(text.innerText[i] == " "){
+        //             newText += "&nbsp";
         //         } else {
         //             newText += text.innerText[i];
         //         }
         //         newText += "</span>";
         //     }
-
         //     text.innerHTML = newText;
         //     text.setAttribute("aria-label", theText);
         // });
 
         // gsap.from(".split span", {
         //     yPercent: 100,
-        //     opacity: 0,
-        //     duration: 0.8,
+        //     autoAlpha: 0,
+        //     duration: 2,
         //     ease: "circ.out",
-        //     stagger: 0.03,
-            
+        //     stagger: 0.1,
+
         //     scrollTrigger: {
         //         trigger: ".split",
         //         start: "top center",
         //         end: "+=400",
         //         markers: true,
-        //         // scrub: 1, 
+        //         scrub: 1,
         //     }
         // });
 
-        // 04. 
-        // gsap.utils.toArray(".split").forEach((text) => {
+        // gsap.utils.toArray(".split").forEach(text => {
         //     gsap.from(text.querySelectorAll("span"), {
         //         yPercent: 100,
-        //         opacity: 0,
+        //         autoAlpha: 0,
         //         duration: 1,
         //         ease: "circ.out",
-        //         // stagger: 0.04,
         //         stagger: {
         //             amount: 1,
-        //             from: "random"
+        //             from : "random"
         //         },
-                
         //         scrollTrigger: {
         //             trigger: text,
         //             start: "top bottom",
         //             end: "+=400",
-        //             markers: true,
+        //             markers: true
         //         }
         //     });
         // });
 
-        // 05. 
+        // 04 split-type 사용하기
         const targets = gsap.utils.toArray(".split");
-
-        targets.forEach((target) => {
-            let SplitClient = new SplitType(target, { type: "lines, words, chars" });
+        
+        targets.forEach(target => {
+            let SplitClient = new SplitType(target, {type: "lines, words, chars"});
             let lines = SplitClient.lines;
             let words = SplitClient.words;
             let chars = SplitClient.chars;
 
             gsap.from(chars, {
                 yPercent: 100,
-                opacity: 0,
+                autoAlpha: 0,
                 duration: 1,
                 ease: "circ.out",
-                stagger: 0.06,
-
+                stagger: {
+                    amount: 1,
+                    from : "random"
+                },
                 scrollTrigger: {
                     trigger: target,
-                    start: "top 75%",
-                    end: "bottom center",
-                    markers: true,
+                    start: "top bottom",
+                    end: "+=400",
+                    markers: false
                 }
             });
         });

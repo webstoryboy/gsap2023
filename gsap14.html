@@ -103,31 +103,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         #section1, #section3, #section5, #section7, #section9 {
             background-color: #111;
@@ -139,11 +139,11 @@
         }
         #horizontal {
             display: flex;
-            flex-wrap: wrap;
-            width: 500vw;
+            flex-wrap: nowrap;
+            width: 500%;
         }
         #horizontal > section {
-            width: 100vw;
+            width: 100%;
         }
     </style>
 </head>
@@ -166,7 +166,6 @@
             <li><a href="gsap12.html">12</a></li>
             <li><a href="gsap13.html">13</a></li>
             <li class="active"><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -252,24 +251,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
         const horizontal = document.querySelector("#horizontal");
-        const section = gsap.utils.toArray("#horizontal > section");
+        const sections = gsap.utils.toArray("#horizontal > section");
 
-        let scrollTween = gsap.to(section, {
-            xPercent: -100 * (section.length - 1),
+        let scrollTween = gsap.to(sections, {
+            xPercent: -100 * (sections.length -1),
             ease: "none",
             scrollTrigger: {
                 trigger: horizontal,
                 start: "top top",
-                end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
+                end: () => "+=" + (horizontal.offsetWidth - innerWidth),
                 pin: true,
+                ainicipatePin: 1,
                 scrub: 1,
-                // snap: {
-                //     snapTo: 1 / (section.length - 1),
-                //     inertia: false,
-                //     duration: {min: 0.1, max: 0.1}
-                // },
-                invalidateOnRefresh: true,
-                anticipatePin: 1
+                invalidateOnRefresh: true
             }
         });
 

@@ -108,31 +108,31 @@
             z-index: 1;
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images10@2.jpg);
+            background-image: url(assets/img/images10@2.jpg);
         }
         .parallax__item__title {
             font-size: 5vw;
@@ -156,12 +156,6 @@
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
-            <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -235,8 +229,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
-        // 01 
-        // const panel = document.querySelector("#section3");
+        // 01. 한개 섹션 고정시키기
+        // const panel = document.querySelector("#section5");
 
         // ScrollTrigger.create({
         //     trigger: panel,
@@ -245,20 +239,20 @@
         //     pinSpacing: false
         // });
 
-        //02
+        // 02. 여러개 섹션 고정시키기
         // gsap.utils.toArray(".parallax__item").forEach((panel, i) => {
         //     ScrollTrigger.create({
         //         trigger: panel,
         //         start: "top top",
-        //         pin: true, 
-        //         pinSpacing: false 
+        //         pin: true,
+        //         pinSpacing: false
         //     });
         // });
 
-        //03 
+        // 03. 스냅 고정 효과 만들기
         let panels = gsap.utils.toArray(".parallax__item");
         let tops = panels.map(panel => ScrollTrigger.create({trigger: panel, start: "top top"}));
-        
+
         panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
@@ -279,6 +273,5 @@
             }
         });
     </script>
-
 </body>
 </html>

@@ -149,31 +149,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         .parallax__item__desc {
             font-size: 4vw;
@@ -206,10 +206,6 @@
             <li><a href="gsap09.html">9</a></li>
             <li><a href="gsap10.html">10</a></li>
             <li class="active"><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -325,7 +321,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
-        const showNav = gsap.from("#parallax__nav", { 
+        const showNav = gsap.from("#parallax__nav", {
             yPercent: -200,
             paused: true,
             duration: 0.2
@@ -335,7 +331,7 @@
             start: "top top",
             end: 99999,
             onUpdate: (self) => {
-                self.direction === -1 ? showNav.play() : showNav.reverse()
+                self.direction === -1 ? showNav.play() : showNav.reverse();
             }
         });
     </script>

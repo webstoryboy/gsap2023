@@ -123,31 +123,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         .parallax__item__desc {
             font-size: 4vw;
@@ -162,13 +162,12 @@
             margin-right: -4vw;
         }
 
-        /* option */
+        /* optiopm */
         .parallax__progress progress {
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 1000;
-            appearance: none;
+            z-index: 10000;
             width: 100%;
             height: 5px;
             border: none;
@@ -181,7 +180,7 @@
             background: linear-gradient(to left, #db38b5,#01b3e3,#25ce7b,#fdc741,#ff6b01,#fc4236);
             background-attachment: fixed;
         }
-        progress::-moz-progress-bar {
+        progress::-moz-progress-value {
             background: linear-gradient(to left, #db38b5,#01b3e3,#25ce7b,#fdc741,#ff6b01,#fc4236);
             background-attachment: fixed;
         }
@@ -201,12 +200,6 @@
             <li><a href="gsap07.html">7</a></li>
             <li class="active"><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
-            <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -214,7 +207,7 @@
     <div class="parallax__progress">
         <progress max="100" value="0"></progress>
     </div>
-    <!-- //parallax__scrollTop -->
+    <!-- //parallax__progress -->
 
     <main id="parallax__cont">
         <section id="section1" class="parallax__item">
@@ -313,8 +306,8 @@
     <script>
         gsap.to("progress", {
             value: 100,
-            ease: 'none',
-            scrollTrigger: { scrub: 0.3 }
+            ease: "none",
+            scrollTrigger: {scrub: 0.3}
         });
     </script>
 </body>

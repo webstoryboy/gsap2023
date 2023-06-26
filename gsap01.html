@@ -72,10 +72,7 @@
             align-items: center;
             justify-content: center;
         }
-        #section2, 
-        #section4, 
-        #section6, 
-        #section8 {
+        .parallax__item:nth-child(2n){
             background-color: #222;
         }
         .parallax__item__num {
@@ -92,32 +89,32 @@
             background-size: cover;
             background-position: center;
         }
-        #section1 .parallax__item__img {
-            background-image: url(img/images14.jpg);
+        .parallax__item:nth-child(1) .parallax__item__img {
+            background-image: url(assets/img/images14.jpg);
         }
-        #section2 .parallax__item__img {
-            background-image: url(img/images15.jpg);
+        .parallax__item:nth-child(2) .parallax__item__img {
+            background-image: url(assets/img/images15.jpg);
         }
-        #section3 .parallax__item__img {
-            background-image: url(img/images03.jpg);
+        .parallax__item:nth-child(3) .parallax__item__img {
+            background-image: url(assets/img/images03.jpg);
         }
-        #section4 .parallax__item__img {
-            background-image: url(img/images04.jpg);
+        .parallax__item:nth-child(4) .parallax__item__img {
+            background-image: url(assets/img/images04.jpg);
         }
-        #section5 .parallax__item__img {
-            background-image: url(img/images05.jpg);
+        .parallax__item:nth-child(5) .parallax__item__img {
+            background-image: url(assets/img/images05.jpg);
         }
-        #section6 .parallax__item__img {
-            background-image: url(img/images06.jpg);
+        .parallax__item:nth-child(6) .parallax__item__img {
+            background-image: url(assets/img/images06.jpg);
         }
-        #section7 .parallax__item__img {
-            background-image: url(img/images07.jpg);
+        .parallax__item:nth-child(7) .parallax__item__img {
+            background-image: url(assets/img/images07.jpg);
         }
-        #section8 .parallax__item__img {
-            background-image: url(img/images08.jpg);
+        .parallax__item:nth-child(8) .parallax__item__img {
+            background-image: url(assets/img/images08.jpg);
         }
-        #section9 .parallax__item__img {
-            background-image: url(img/images09.jpg);
+        .parallax__item:nth-child(9) .parallax__item__img {
+            background-image: url(assets/img/images09.jpg);
         }
         .parallax__item__img.active {
             filter: hue-rotate(100deg);
@@ -138,12 +135,6 @@
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
-            <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -206,7 +197,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
     <script>
         const box1 = document.querySelector("#section1 .parallax__item__img");
         const box2 = document.querySelector("#section2 .parallax__item__img");
@@ -217,71 +207,67 @@
         const box7 = document.querySelector("#section7 .parallax__item__img");
         const box8 = document.querySelector("#section8 .parallax__item__img");
         const box9 = document.querySelector("#section9 .parallax__item__img");
-    
+
         // 01
         gsap.to(box1, {
             duration: 2,
             x: 500,
             borderRadius: 100,
-            rotation: 360, 
+            rotation: 360
         });
 
-        // 02 : trigger : 시작점
+        // 02 : trigger
         gsap.to(box2, {
             duration: 2,
             x: 500,
             rotation: 360,
             borderRadius: 100,
             scrollTrigger: {
-                trigger: box2,
+                trigger: box2
             }
         });
 
-        // 03 : toggleActions 
-        // onEnter
-        // onLeave
-        // onEnterBack
-        // onLeaveBack
-        // play, pause, resume, reset, restart, complete, reverse, none
+        // 03 : toggleActions
         gsap.to(box3, {
-            duration: 1,
+            duration: 2,
             x: 500,
             rotation: 360,
             borderRadius: 100,
-
             scrollTrigger: {
                 trigger: box3,
-                toggleActions: "play pause reverse none" 
+                toggleActions: "play none reverse none"
             }
         });
 
-        // 04 : start, end
+        // 04 : start, edn
         gsap.to(box4, {
-            duration: 1,
+            duration: 2,
             x: 500,
             rotation: 360,
             borderRadius: 100,
+
             scrollTrigger: {
                 trigger: box4,
                 start: "top 50%",
                 end: "bottom 20%",
-                toggleActions: "play pause reverse pause",
-                markers: false,
+                toggleActions: "play none reverse none",
+                markers: false
             }
         });
 
         // 05 : scrub
         gsap.to(box5, {
-            duration: 1,
+            duration: 2,
             x: 500,
             rotation: 360,
             borderRadius: 100,
+
             scrollTrigger: {
                 trigger: box5,
                 start: "top 50%",
                 end: "bottom 20%",
-                scrub: 0.5,    //true, 1, 2,....
-                markers: false,
+                scrub: true, //true, 1, 2...
+                markers: false
             }
         });
 
@@ -291,13 +277,14 @@
             x: 500,
             rotation: 360,
             borderRadius: 100,
+
             scrollTrigger: {
                 trigger: box6,
                 start: "top 50%",
-                end: "top 100px",
+                end: "bottom 200px",
+                scrub: true, 
                 pin: true,
-                scrub: true,    
-                markers: false,
+                markers: false
             }
         });
 
@@ -311,10 +298,10 @@
             scrollTrigger: {
                 trigger: box7,
                 start: "top center",
-                end: "bottom top",
-                scrub: true,    
-                markers: true,
+                end: "bottom 20%",
+                scrub: true, 
                 toggleClass: "active",
+                markers: false,
                 id: "box7"
             }
         });
@@ -325,22 +312,21 @@
             x: 500,
             rotation: 360,
             borderRadius: 100,
-            
+
             scrollTrigger: {
                 trigger: box8,
                 start: "top center",
-                end: "bottom 30%",
-                scrub: true,    
-                markers: false,
-                // onEnter : () => {console.log("onEnter")},
-                // onLeave : () => {console.log("onLeave")},
-                // onEnterBack : () => {console.log("onEnterBack")},
-                // onLeaveBack : () => {console.log("onLeaveBack")},
-                // onUpdate : (self) => {console.log("onUpdate", self.progress.toFixed(3))},
+                end: "bottom 20%",
+                scrub: true, 
+                markers: true,
+                // onEnter: () => {console.log("onEnter")},
+                // onLeave: () => {console.log("onLeave")},
+                // onEnterBack: () => {console.log("onEnterBack")},
+                // onLeaveBack: () => {console.log("onLeaveBack")},
+                onUpdate : (self) => {console.log("onUpdate", self.progress.toFixed(3))},
                 onToggle : (self) => {console.log("onToggle", self.isActive)},
             }
         });
     </script>
-
 </body>
 </html>

@@ -147,31 +147,31 @@
             transform: scale(1.025);
         }
         #section1 .parallax__item__img {
-            background-image: url(img/images01@2.jpg);
+            background-image: url(assets/img/images01@2.jpg);
         }
         #section2 .parallax__item__img {
-            background-image: url(img/images02@2.jpg);
+            background-image: url(assets/img/images02@2.jpg);
         }
         #section3 .parallax__item__img {
-            background-image: url(img/images03@2.jpg);
+            background-image: url(assets/img/images03@2.jpg);
         }
         #section4 .parallax__item__img {
-            background-image: url(img/images04@2.jpg);
+            background-image: url(assets/img/images04@2.jpg);
         }
         #section5 .parallax__item__img {
-            background-image: url(img/images05@2.jpg);
+            background-image: url(assets/img/images05@2.jpg);
         }
         #section6 .parallax__item__img {
-            background-image: url(img/images06@2.jpg);
+            background-image: url(assets/img/images06@2.jpg);
         }
         #section7 .parallax__item__img {
-            background-image: url(img/images07@2.jpg);
+            background-image: url(assets/img/images07@2.jpg);
         }
         #section8 .parallax__item__img {
-            background-image: url(img/images08@2.jpg);
+            background-image: url(assets/img/images08@2.jpg);
         }
         #section9 .parallax__item__img {
-            background-image: url(img/images09@2.jpg);
+            background-image: url(assets/img/images09@2.jpg);
         }
         .parallax__item__desc {
             font-size: 4vw;
@@ -180,7 +180,6 @@
             margin-left: -4vw;
             z-index: 100;
             position: relative;
-            word-break: keep-all;
         }
         .parallax__item:nth-child(even) .parallax__item__desc {
             margin-left: auto;
@@ -202,12 +201,6 @@
             <li><a href="gsap07.html">7</a></li>
             <li><a href="gsap08.html">8</a></li>
             <li class="active"><a href="gsap09.html">9</a></li>
-            <li><a href="gsap10.html">10</a></li>
-            <li><a href="gsap11.html">11</a></li>
-            <li><a href="gsap12.html">12</a></li>
-            <li><a href="gsap13.html">13</a></li>
-            <li><a href="gsap14.html">14</a></li>
-            <li><a href="gsap15.html">15</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -326,9 +319,8 @@
         let links = gsap.utils.toArray("#parallax__nav ul li a");
 
         links.forEach(link => {
-            let element = document.querySelector(link.getAttribute("href")),
-            
-            linkST = ScrollTrigger.create({
+            let element = document.querySelector(link.getAttribute("href"));
+            let linkST = ScrollTrigger.create({
                 trigger: element,
                 start: "top top"
             });
@@ -343,10 +335,10 @@
             link.addEventListener("click", e => {
                 e.preventDefault();
                 gsap.to(window, {duration: 1, scrollTo: linkST.start, overwrite: "auto"});
-            });
+            })
         });
 
-        function setActive(link) {
+        function setActive(link){
             links.forEach(el => el.classList.remove("active"));
             link.classList.add("active");
         }
